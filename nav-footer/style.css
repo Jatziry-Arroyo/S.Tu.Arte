@@ -7,14 +7,17 @@ body {
     width:100%;
 }
 
-#div-nav {
+/*#div-nav {
 margin-left: 1%;
 margin-right: 1%;
-width: 100%;
+/*width: 100%;
 
 justify-content: left;
 text-align: left;
-height: 85px;
+height: 72px;
+}*/
+#div-nav {
+    top: 50%;
 }
 
 .icono-nav {
@@ -53,7 +56,7 @@ height: 85px;
 
 .navbar {
     background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));
-    height: 85px;
+    height: 72px;
     color:white;    
 }
 
@@ -73,8 +76,12 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 45px;
+    height: 28px;
     justify-content: left;
+}
+
+#icono-logo {
+    height: 52px;
 }
 
 .navbar-collapse {
@@ -95,7 +102,7 @@ nav,a,li,ul {
 .navbar-nav {
     justify-content: space-between;
     width: 100%;
-    height: 85px;
+    height: 72px;
 }
 
 #btn-menu {
@@ -112,7 +119,7 @@ nav {
 .navbar-brand {
     text-align: left;
     justify-content: left;
-    
+    position: fixed;
 }
 
 .navbar-toggler{width: auto;}
@@ -162,3 +169,5 @@ footer{
 #footerCopyright{
     font-size: 50%;
 }
+
+h4
