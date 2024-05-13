@@ -63,7 +63,7 @@ height: 72px;
 
 .nav.link:hover, a.nav-link:hover{
     color: white;
-    cursor: url("./assets/iconamoon--enter-duotone.png"),auto;
+    cursor: url("../assets/iconamoon--enter-duotone.png"),auto;
 }
 
 a.nav-link:focus {
@@ -304,4 +304,9 @@ footer{
 }
 #footerCopyright{
     font-size: 50%;
+}
+
+#active-page {
+  border-bottom: 2px solid white;
+  color: white;
 }
