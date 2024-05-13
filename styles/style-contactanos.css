@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.75));
+}
+
+#nav-fixed{
+    position: fixed;
+    width:100%;
+}
+
+/*#div-nav {
+margin-left: 1%;
+margin-right: 1%;
+/*width: 100%;
+
+justify-content: left;
+text-align: left;
+height: 72px;
+}*/
+#div-nav {
+    top: 50%;
+}
+
+.icono-nav {
+    display:block;
+    text-align: center;
+    justify-content: center;
+    color:white;
+}
+
+#div-coll {
+    background-image: linear-gradient(to bottom, rgba(13,10,175,0), rgba(13,10,175,1));
+    z-index:2;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(13,10,175,0.6),rgba(255,255,255,0.3));
+    z-index:1;
+    border-radius: 0;
+    border: 0;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.dropdown-item {
+    color: white;
+    opacity: 1;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+}
+
+#pp {
+    opacity: 1;
+}
+
+.navbar {
+    background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));
+    height: 72px;
+    color:white;    
+}
+
+.nav.link:hover, a.nav-link:hover{
+    color: white;
+    cursor: url("../assets/iconamoon--enter-duotone.png"),auto;
+}
+
+a.nav-link:focus {
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.nav-link {
+    font-size: 13px;
+    color:white;
+}
+
+.img-icon{
+    height: 28px;
+    justify-content: left;
+}
+
+#icono-logo {
+    height: 52px;
+}
+
+.navbar-collapse {
+    text-align: left;
+   justify-content: left;
+   border: 0;
+}
+
+.nav-item {
+    color: white;
+    height: 85px;
+}
+
+nav,a,li,ul {
+    color:white;
+}
+
+.navbar-nav {
+    justify-content: space-between;
+    width: 100%;
+    height: 72px;
+}
+
+#btn-menu {
+    background-repeat: no-repeat;
+    text-align: left;
+    justify-content: left;
+}
+
+nav {
+    z-index: 5;
+}
+
+
+.navbar-brand {
+    text-align: left;
+    justify-content: left;
+    position: fixed;
+}
+
+.navbar-toggler{width: auto;}
+
+@media (max-width:992px) {
+    .nav-item{
+        text-align: left;
+        justify-content: left;
+    }
+    .navbar-nav {
+        text-align: left;
+        padding-right: 25px;
+        justify-content: left;
+    }
+    .icono-nav{
+        text-align: left;
+        justify-content: left;
+    }
+    .nav-link{
+        text-align: left;
+        justify-content: left;
+    }
+}
+
+h1{color:white}
+
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    /* border: 1px solid #ccc; */
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 2em;
+  }
+  
+  label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  
+  input,
+  textarea {
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999; 
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #000;
+  }
+  
+  textarea {
+    vertical-align: top;
+    height: 5em;
+  }
+  
+  .button {
+    padding-left: 90px;
+  }
+  
+  button {
+
+    margin-left: 0.5em;
+  }
+
+  h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    float: left;
+    width: 20%;
+    padding: 30px;
+    font-size: 38px;
+  }
+  
+  label{
+    font-family: "Poppins", sans-serif;
+    color:white;
+  }
+
+  input{
+    border-radius: 10px;
+    padding: 20px; /*este hace gorditos los inputs*/
+    width: 650px;
+    
+  }
+
+  #mensaje{
+    padding: 10px;
+  }
+
+  #correo{
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  #identificacion{
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  #numero{
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  #nombre{
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+
+  button{
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #B100A8;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 410px;
+    padding: 9px 15px;
+    width: 150px;
+  }
+
+  span{
+    color: white;
+    font-family: "Poppins", sans-serif;
+     font-weight: 300;
+     font-style: normal;
+    
+  }
+
+  #left h2{
+    padding-top: 30px;
+
+  }
+
+  #left {
+    padding-top: 200px;
+  }
+  
+  @media (max-width:992px){
+    .form {
+        text-align: left;
+        justify-content: left;
+    }
+
+   
+}
+
+footer{
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+#footerDescription{
+    font-size: 80%;
+}
+#footerTC{
+    font-size: 80%;
+}
+#footerHome{
+    font-size: 80%;
+}
+#footerEmail{
+    font-size: 80%;
+}
+#footerPhone{
+    font-size: 80%;
+}
+#footerCopyright{
+    font-size: 50%;
+}
+
+#active-page {
+  border-bottom: 2px solid white;
+  color: white;
+}
