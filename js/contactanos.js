@@ -1,4 +1,36 @@
-const email = document.getElementById("mail");
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+    if (!form.checkValidity()) {
+        e.preventDefault();
+    }
+    form.classList.add("was-validated");
+    console.log("submit");
+},
+    false
+);
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+/*(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()*/
+
+
+/*const email = document.getElementById("mail");
 email.addEventListener("input", function (event) {
     if (email.validity.typeMismatch) {
      email.setCustomValidity( "¡Se esperaba una dirección de correo electrónico, no una obra de arte!" );
@@ -33,3 +65,4 @@ number.addEventListener("input", function (event) {
      number.setCustomValidity("");
     }
 });
+*/
