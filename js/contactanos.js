@@ -9,6 +9,27 @@ form.addEventListener("submit", (e) => {
 },
     false
 );
+
+/*
+const email = document.getElementById("validationCustom04");
+form.addEventListener("submit", e => {
+    e.preventDefault()
+    let warning = "";
+    let entrar = false;
+    let regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-])*$/;
+    // console.log(regexEmail.test(email.value))
+    if (!regexEmail.test(email.value)) {
+        warning += "El email no es valido <br>"
+        entrar = true
+    }
+    if (entrar) {
+        parrafo.innerHTML = warning
+        parrafo.style.color = "red"
+    }
+
+})
+*/
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 /*(() => {
     'use strict'
