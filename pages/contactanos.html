@@ -99,57 +99,49 @@
             <h6>Extérnanos tus dudas y
                 sugerencias.</h6>
         </div>
-        <div class="col-md-7">
-            <form action="https://formsubmit.co/azucena.peredo9@gmail.com" method="post" novalidate>
+        <div class="col-md-7" id="form">
+            <form action="https://formsubmit.co/azucena.peredo9@gmail.com" method="post" id="contactanos-form">
                 <ul>
                     <li>
-                        <label id="nombre" for="name">Nombre: </label>
-                        <input class="form-control" type="name" id="validationCustom01" name="user_mail"
-                            placeholder="Escribe tu nombre aquí" patern="[a-zA-Z]" required />
-                        <div class="invalid-feedback">
-                            Normalmente los nombres tienen letras no números.
-                        </div>
+                        <label for="name">Nombre: </label>
+                        <input class="form-control" type="name" id="name" name="user_mail"
+                            placeholder="Escribe tu nombre aquí" />
+                        <div id="nameError" class="error"></div>
                     </li>
                     <li>
-                        <label id="numero" for="number">Número de Teléfono: </label>
-                        <input class="form-control" type="tel" required id="validationCustom02" name="number"
-                            placeholder="Inserta tu número a 10 dígitos" minlength="10" maxlength="10"
-                            pattern="[0-9]{10}" />
-                        <div class="invalid-feedback">
-                            Recuerda escribir tu número a 10 dígitos.
-                        </div>
+                        <label for="number">Número de Teléfono: </label>
+                        <input class="form-control" type="tel" id="phone" name="number"
+                            placeholder="Inserta tu número a 10 dígitos" />
+                        <div id="phoneError" class="error"></div>
                     </li>
                     <li>
                         <label id="identificacion" for="validationCustom03">Elige la opción en la que te identifiques:
                         </label>
-                        <select class="form-select user-options" id="validationCustom04" required>
+                        <select class="form-select user-options" id="options">
                             <option selected disabled value="">Opciones</option>
                             <option value="1">Artistx</option>
                             <option value="2">Compradxr</option>
                             <option value="3">Visitantx</option>
                         </select>
-                        <div class="invalid-feedback">
-                            Por favor selecciona una opción.
-                        </div>
+                        <div id="optionsError" class="error"></div>
                     </li>
                     <li>
-                        <label id="correo" for="validationCustom04">Correo electronico: </label>
-                        <input class="form-control" type="email" required id="validationCustom04" name="user_mail"
-                            placeholder="e-mail">
-                        <div class="invalid-feedback">
-                            ¡Se esperaba una dirección de correo electrónico, no una obra de arte!
-                        </div>
+                        <label for="validationCustom04">Correo electronico: </label>
+                        <input class="form-control" type="email" id="email" name="user_mail" placeholder="e-mail">
+                        <div id="emailError" class="error"></div>
                     </li>
                     <li>
                         <label id="mensaje" for="msm">Escríbenos: </label>
-                        <textarea class="form-control" type="msm" minlength="15" maxlength="500"
-                            placeholder="Escribe tu mensaje aquí" required></textarea>
+                        <textarea class="form-control" id="message" type="msm"
+                            placeholder="Escribe tu mensaje aquí"></textarea>
+                        <div id="messageError" class="error"></div>
                     </li>
                     <li class="button">
                         <button type="submit">Enviar</button>
                     </li>
                 </ul>
             </form>
+            <div id="errorMessages"></div>
         </div>
     </div>
 

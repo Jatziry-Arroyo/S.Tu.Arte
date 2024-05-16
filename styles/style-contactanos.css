@@ -212,46 +212,10 @@ button {
   margin-left: 0.5em;
 }
 
-
-input {
-  border-radius: 10px;
-
-  /*este hace gorditos los inputs*/
-  width: 650px;
-
-}
-
-.user_options {
-  border-radius: 10px;
-  padding: 20px;
-  /*este hace gorditos los inputs*/
-  width: 650px;
-}
-
-#mensaje {
-  padding: 10px;
-}
-
-#correo {
+#name #email #message #options #phone {
   padding: 10px;
   white-space: nowrap;
 }
-
-#identificacion {
-  padding: 10px;
-  white-space: nowrap;
-}
-
-#numero {
-  padding: 10px;
-  white-space: nowrap;
-}
-
-#nombre {
-  padding: 10px;
-  white-space: nowrap;
-}
-
 
 button {
   font-family: "Poppins", sans-serif;
@@ -270,6 +234,15 @@ span {
   font-weight: 300;
   font-style: normal;
 
+}
+
+.error {
+  color: red;
+  text-align: left;
+}
+
+.input-error {
+  border: 5px solid #d38f33;
 }
 
 #side-text {
