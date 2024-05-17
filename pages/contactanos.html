@@ -92,60 +92,64 @@
         </div>
     </nav>
     <br>
-    <div class="row g-3" id="side-text">
-        <div class="col-md-5" id="left">
-            <h2>Contáctanos</h2> <br> <br><br>
-            <h4>¡Creemos una comunidad amante del arte!</h4> <br><br><br><br>
-            <h6>Extérnanos tus dudas y
-                sugerencias.</h6>
-        </div>
-        <div class="col-md-7" id="form">
-            <form action="https://formsubmit.co/azucena.peredo9@gmail.com" method="post" id="contactanos-form">
-                <ul>
-                    <li>
-                        <label for="name">Nombre: </label>
-                        <input class="form-control" type="name" id="name" name="user_mail"
-                            placeholder="Escribe tu nombre aquí" />
-                        <div id="nameError" class="error"></div>
-                    </li>
-                    <li>
-                        <label for="number">Número de Teléfono: </label>
-                        <input class="form-control" type="tel" id="phone" name="number"
-                            placeholder="Inserta tu número a 10 dígitos" />
-                        <div id="phoneError" class="error"></div>
-                    </li>
-                    <li>
-                        <label id="identificacion" for="validationCustom03">Elige la opción en la que te identifiques:
-                        </label>
-                        <select class="form-select user-options" id="options">
-                            <option selected disabled value="">Opciones</option>
-                            <option value="1">Artistx</option>
-                            <option value="2">Compradxr</option>
-                            <option value="3">Visitantx</option>
-                        </select>
-                        <div id="optionsError" class="error"></div>
-                    </li>
-                    <li>
-                        <label for="validationCustom04">Correo electronico: </label>
-                        <input class="form-control" type="email" id="email" name="user_mail" placeholder="e-mail">
-                        <div id="emailError" class="error"></div>
-                    </li>
-                    <li>
-                        <label id="mensaje" for="msm">Escríbenos: </label>
-                        <textarea class="form-control" id="message" type="msm"
-                            placeholder="Escribe tu mensaje aquí"></textarea>
-                        <div id="messageError" class="error"></div>
-                    </li>
-                    <li class="button">
-                        <button type="submit">Enviar</button>
-                    </li>
-                </ul>
-            </form>
-            <div id="errorMessages"></div>
+    <div class="container-fluid">
+        <div class="row" id="side-text">
+            <div class="col-sm" id="left">
+                <h2>Contáctanos</h2> <br> <br><br>
+                <h4>¡Creemos una comunidad amante del arte!</h4> <br><br><br><br>
+                <h6>Extérnanos tus dudas y
+                    sugerencias.</h6>
+            </div>
+            <div class="col-sm" id="form">
+                <form id="contactanos-form">
+                    <ul>
+                        <li>
+                            <label for="name">Nombre: </label>
+                            <input class="form-control" type="name" id="name" name="user_mail"
+                                placeholder="Escribe tu nombre aquí" />
+                            <div id="nameError" class="error"></div>
+                        </li>
+                        <li>
+                            <label for="number">Número de Teléfono: </label>
+                            <input class="form-control" type="tel" id="phone" name="number"
+                                placeholder="Inserta tu número a 10 dígitos" />
+                            <div id="phoneError" class="error"></div>
+                        </li>
+                        <li>
+                            <label id="identificacion" for="validationCustom03">Elige la opción en la que te
+                                identifiques:
+                            </label>
+                            <select class="form-select user-options" id="options">
+                                <option selected disabled value="">Opciones</option>
+                                <option value="1">Artistx</option>
+                                <option value="2">Compradxr</option>
+                                <option value="3">Visitantx</option>
+                            </select>
+                            <div id="optionsError" class="error"></div>
+                        </li>
+                        <li>
+                            <label for="validationCustom04">Correo electronico: </label>
+                            <input class="form-control" type="email" id="email" name="user_mail" placeholder="e-mail">
+                            <div id="emailError" class="error"></div>
+                        </li>
+                        <li>
+                            <label id="mensaje" for="msm">Escríbenos: </label>
+                            <textarea class="form-control" id="message" type="msm"
+                                placeholder="Escribe tu mensaje aquí"></textarea>
+                            <div id="messageError" class="error"></div>
+                        </li>
+                        <li class="button">
+                            <button type="submit" id="submitBtn">Enviar</button>
+                        </li>
+                    </ul>
+                </form>
+                <div id="errorMessages"></div>
+            </div>
         </div>
     </div>
 
-    <br><br><br><br><br>
+
+    <br><br><br><br>
     <br><br><br><br>
     <footer class="footer bg-dark text-white pt-2 pb-2">
         <div class="container text-center text-md-left">
