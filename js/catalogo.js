@@ -25,7 +25,7 @@ function generateProductCard(product) {
     `;
 }
 
-// Esta función para agregar las tarjetas al contenedor específico
+// Esta función es para agregar las tarjetas al contenedor específico
 function addProductCards(container, products) {
     const html = products.map(product => generateProductCard(product)).join('');
     container.innerHTML += html;
@@ -40,14 +40,5 @@ fetch(jsonFile)
         return response.json();
     })
     .then((data) => {
-        // Aquí se dividieron los datos para que aparecieran en las columnas
-        const oneThirdLength = Math.ceil(data.length / 3);
-        const firstThird = data.slice(0, oneThirdLength);
-        const secondThird = data.slice(oneThirdLength, oneThirdLength * 2);
-        const thirdThird = data.slice(oneThirdLength * 2);
-
-        // Se agregan las tarjetas al HTML
-        addProductCards(mostPopProducts, firstThird);
-        addProductCards(mostPopProducts, secondThird);
-        addProductCards(mostPopProducts, thirdThird);
+        addProductCards(mostPopProducts, data.slice(0));
     });
