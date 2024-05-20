@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body {
-    background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.75));
-}
 
-#nav-fixed{
-    position: fixed;
-    width:100%;
+/*body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
+}*/
+
+#nav-fixed {
+    position: sticky;
+    width: 100%;
 }
 
 /*#div-nav {
@@ -22,21 +23,21 @@ height: 72px;
 }
 
 .icono-nav {
-    display:block;
+    display: block;
     text-align: center;
     justify-content: center;
-    color:white;
+    color: white;
 }
 
 #div-coll {
-    background-image: linear-gradient(to bottom, rgba(13,10,175,0), rgba(13,10,175,1));
-    z-index:2;
+    background-image: linear-gradient(to bottom, rgba(13, 10, 175, 0), rgba(13, 10, 175, 1));
+    z-index: 2;
     justify-content: center;
 }
 
 .dropdown-menu {
-    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(13,10,175,0.6),rgba(255,255,255,0.3));
-    z-index:1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(13, 10, 175, 0.6), rgba(255, 255, 255, 0.3));
+    z-index: 1;
     border-radius: 0;
     border: 0;
     margin-top: 10px;
@@ -56,14 +57,15 @@ height: 72px;
 }
 
 .navbar {
-    background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));
+    background: linear-gradient(to right, rgba(177, 0, 168, 1), rgba(211, 143, 51, 1), rgba(13, 10, 175, 1));
     height: 72px;
-    color:white;    
+    color: white;
 }
 
-.nav.link:hover, a.nav-link:hover{
+.nav.link:hover,
+a.nav-link:hover {
     color: white;
-    cursor: url("../assets/iconamoon--enter-duotone.png"),auto;
+    cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
 }
 
 a.nav-link:focus {
@@ -73,10 +75,10 @@ a.nav-link:focus {
 
 .nav-link {
     font-size: 13px;
-    color:white;
+    color: white;
 }
 
-.img-icon{
+.img-icon {
     height: 28px;
     justify-content: left;
 }
@@ -87,8 +89,8 @@ a.nav-link:focus {
 
 .navbar-collapse {
     text-align: left;
-   justify-content: left;
-   border: 0;
+    justify-content: left;
+    border: 0;
 }
 
 .nav-item {
@@ -96,8 +98,11 @@ a.nav-link:focus {
     height: 85px;
 }
 
-nav,a,li,ul {
-    color:white;
+nav,
+a,
+li,
+ul {
+    color: white;
 }
 
 .navbar-nav {
@@ -122,54 +127,139 @@ nav {
     position: fixed;
 }
 
-.navbar-toggler{width: auto;}
+.navbar-toggler {
+    width: auto;
+}
 
 @media (max-width:992px) {
-    .nav-item{
+    .nav-item {
         text-align: left;
         justify-content: left;
     }
+
     .navbar-nav {
         text-align: left;
         padding-right: 25px;
         justify-content: left;
     }
-    .icono-nav{
+
+    .icono-nav {
         text-align: left;
         justify-content: left;
     }
-    .nav-link{
+
+    .nav-link {
         text-align: left;
         justify-content: left;
     }
 }
 
-h1{color:white}
+h1 {
+    color: white
+}
 
-footer{
+footer {
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
-#footerDescription{
+
+#footerDescription {
     font-size: 80%;
 }
-#footerTC{
+
+#footerTC {
     font-size: 80%;
 }
-#footerHome{
+
+#footerHome {
     font-size: 80%;
 }
-#footerEmail{
+
+#footerEmail {
     font-size: 80%;
 }
-#footerPhone{
+
+#footerPhone {
     font-size: 80%;
 }
-#footerCopyright{
+
+#footerCopyright {
     font-size: 50%;
 }
 
 #active-page {
-  border-bottom: 2px solid white;
-  color: white;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+/*Imagen de fondo*/
+/*
+body {
+    background: black;
+    background-image: url(../assets/Fondo-S-Tu-Arte.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /*background-attachment: fixed;*/
+/*height: fit-content;
+}*/
+/*otra opcion*/
+@font-face {
+    font-family: stuarte-font;
+    src: url("../assets/porter_sans_block/porter-sans-inline-block.ttf");
+}
+
+.masthead {
+    background-image: url(../assets/Fondo-S-Tu-Arte-black.png);
+    background-size: cover;
+    min-height: 100vh;
+    /*no mover a % pq si no, se carga todo*/
+    max-width: 100vw;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /*ocultan el exceso de pantalla pq sin ellos había que hacer scroll a lo ancho*/
+
+    h1 {
+        font-size: 4rem;
+        font-family: stuarte-font;
+        color: aliceblue;
+    }
+}
+
+.color-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 4%;
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        min-height: 100vh;
+
+    }
+
+    h1 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
+}
+
+/*esto hace que se adapte la imagen y texto aún cuando se reduce el tamaño del viewport*/
+
+.text-block {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 55%;
+    left: 62%;
+    font-weight: bold;
+    padding: 5px;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    /* Centra el texto horizontalmente y verticalmente dentro de masthead y aplica la rotación */
 }
