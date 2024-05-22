@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general.css">
+    <title>Regristro Artistxs</title>
+</head>
+<body>
+    <class"container">
+        <div class="title">Registro Artistx</div>
+        <form id="form-registro-artistx">
+            <p>Datos de Perfil</p>
+
+        <div class="form-group"></div>
+        <span>Escoge tú fecha de nacimiento</span>
+        <input type="date" id="nacimiento" required>
+
+            <div class="form-group"></div>
+        <span>¿Tienes un alias?</span>
+        <input type="text" id="alias">
+        </form>
+
+        <div class="form-group"></div>
+        <span>Escoge tú facultad</span>
+        <input type="text" id="facultad" required>
+
+        <div class="form-group"></div>
+        <span>¿En qué año estas?</span>
+        <select name="añoescolar" id="añoescolar">
+
+            <option value="1">Primer año</option>
+            <option value="2">Segundo año</option>
+            <option value="3">Tercer año</option>
+            <option value="4">Cuarto año</option>
+
+        </select>
+        
+
+        <div class="form-group"></div>
+        <span>¿Qué técnicas manejas?</span>
+        <select name="tecnicas" id="tecnicas">
+            <option value="grabado">Grabado</option>
+            <option value="escultura">Escultura</option>
+            <option value="oleo">Óleo</option>
+            <option value="collage">Collage</option>
+            <option value="acuarela">Acuarela</option>
+            <option value="fotografia">Fotografía</option>
+            <option value="acrilico">Acrílico</option>
+            
+        </select>
+
+        <div class="form-group"></div>
+        <span>Escribe una reseña de tu trabajo</span>
+        <textarea id="reseña" minlength="50" maxlength="500"></textarea>
+
+            <br/>
+
+            <input type="button" id="btn-guardar" value="Guardar">
+            <button onclick="goBack()">Regresar</button>
+
+
+    </class>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="../Js/validacionArtistx.js"></script>
+    
+    <br><br><br><br>
+    <br><br><br><br>
+    <footer class="footer bg-dark text-white pt-2 pb-2">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h4 class="text-uppercase mb-4 font-weight-bold text-white">S-Tu-Arte</h4>
+                    <p class=" text-light" id="footerDescription">
+                        Descubre y apoya el talento de las, los y les artistas universitaries desde nuestra plataforma.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-white">Términos y Condiciones</h5>
+                    <p id="footerTC">
+                        <a href="#" class="text-light" style="text-decoration:none"> Consulta la política de Términos y
+                            Condiciones</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-white">Contacto</h5>
+                    <p id="footerHome">
+                        <i class="fas fa-home"></i>
+                        México
+                    </p>
+                    <p id="footerEmail">
+                        <i class="fa fa-envelope" mr-3"></i>
+                        <a href="#" class="text-light">contactastuarte@gmail.com</a>
+                    </p>
+                    <p id="footerPhone">
+                        <i class="fas fa-phone"></i>
+                        +52 67987532
+                    </p>
+                </div>
+                <hr class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-lg-4">
+                        <p id="footerCopyright"> &copy; 2024 S-Tu-Arte. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
