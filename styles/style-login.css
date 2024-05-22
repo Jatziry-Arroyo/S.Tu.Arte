@@ -146,6 +146,30 @@ nav {
 
 h1{color:white}
 
+.rounded-border {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.btn-morado {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+}
+
+.btn-morado:hover {
+    background-color: #5a33a7;
+    border-color: #5a33a7;
+}
+
+.text-light:hover
+
 footer{
     font-family: "Poppins", sans-serif;
     font-style: normal;
