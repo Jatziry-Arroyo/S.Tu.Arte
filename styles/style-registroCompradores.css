@@ -252,3 +252,13 @@ button {
     padding: 9px 15px;
     width: 150px;
 }
+
+/*Formato errores validación*/
+.error {
+    color: red;
+    text-align: left;
+}
+
+.input-error {
+    border: 5px solid #d38f33;
+}

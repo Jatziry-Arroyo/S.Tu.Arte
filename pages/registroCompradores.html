@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style-registroCompradores.css">
+    <script async defer src="../js/registroCompradores.js"></script>
 </head>
 
 <body>
@@ -99,37 +100,39 @@
             </div>
             <div class="col-sm-4">
                 <label class="form-label">País</label>
-                <select class="form-control" name="pais" id="pais" required>
+                <select class="form-control" name="pais" id="pais">
                     <option selected disabled value="">Opciones</option>
                     <option value="México">México</option>
                     <option value="EUA">Estados Unidos</option>
                 </select>
+                <div id="paisError" class="error"></div>
             </div>
             <div class="col-sm-4">
                 <label class="form-label">Estado</label>
-                <input class="form-control" type="text" id="estado" placeholder="Escribe el nombre de tu estado"
-                    required>
+                <input class="form-control" type="text" id="estado" placeholder="Escribe el nombre de tu estado">
+                <div id="edoError" class="error"></div>
             </div>
             <div class="col-sm-4">
                 <label class="form-label">Ciudad</label>
-                <input type="text" class="form-control" id="ciudad" placeholder="Escribe el nombre de tu ciudad"
-                    required>
+                <input type="text" class="form-control" id="ciudad" placeholder="Escribe el nombre de tu ciudad">
+                <div id="cdError" class="error"></div>
             </div>
             <div class="col-sm-6">
                 <label class="form-label second-row">Dirección</label>
-                <input class="form-control" type="text" id="direccion" placeholder="Ingrese su domicilio" required>
+                <input class="form-control" type="text" id="domicilio" placeholder="Ingrese su domicilio">
+                <div id="domicilioError" class="error"></div>
             </div>
             <div class="col-sm-6">
                 <label class="form-label second-row">Fecha de Nacimiento</label>
-                <input class="form-control" type="date" id="fechanacimiento"
-                    placeholder="El día en que nacieron todas las flores" required>
+                <input class="form-control" type="date" id="fechanacimiento">
             </div>
             <div class="form-group" id="botones">
-                <button type="button" id="btn-guardar" value="Guardar">Guardar</button>
+                <button type="submit" id="btn-guardar" value="Guardar">Guardar</button>
                 <button onclick="goBack()">Regresar</button>
             </div>
 
         </form>
+        <div id="errorMessages"></div>
     </div>
     <br><br>
 
@@ -178,7 +181,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="../js/registroCompradores.js"></script>
 </body>
 
 </html>
