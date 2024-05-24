@@ -1,6 +1,11 @@
+
 @font-face {
     font-family: stuarte-font;
     src: url("../assets/porter_sans_block/porter-sans-inline-block.ttf");
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
 }
 
 #stuarte {
