@@ -55,7 +55,7 @@ document.getElementById("form-registro-comprador").addEventListener("submit", fu
     var estado = document.getElementById("estado").value.trim();
     var ciudad = document.getElementById("ciudad").value.trim();
     var domicilio = document.getElementById("domicilio").value.trim();
-    var fechanacimiento = document.getElementById("fechanacimiento");
+    var fechanacimiento = document.getElementById("fechanacimiento").value;
 
     var domicilioRegex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ#\-\. ]+$/;
     var edoCdRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\-\ ]+$/;
@@ -64,6 +64,7 @@ document.getElementById("form-registro-comprador").addEventListener("submit", fu
     var domicilioError = "";
     var edoError = "";
     var cdError = "";
+    var fnacimientoError = "";
 
     if (selectedOption == "Opciones") {
         var paisError = "Necesitas elegir una opción";
@@ -85,12 +86,19 @@ document.getElementById("form-registro-comprador").addEventListener("submit", fu
         document.getElementById("domicilio").classList.add("input-error");
     }
 
+    //var diaMesAño = fechanacimiento.split("-");
+    if (fechanacimiento == "") {
+        var fnacimientoError = "Inserta tu fecha de nacimiento";
+        document.getElementById("fechanacimiento").classList.add("input-error");
+    }
+
     document.getElementById("paisError").textContent = paisError;
     document.getElementById("edoError").textContent = edoError;
     document.getElementById("cdError").textContent = cdError;
     document.getElementById("domicilioError").textContent = domicilioError;
+    document.getElementById("fnacimientoError").textContent = fnacimientoError;
 
-    if (paisError || edoError || cdError || domicilioError) {
+    if (paisError || edoError || cdError || domicilioError || fnacimientoError) {
         return;
     } else {
         const dataComprador = {
@@ -112,5 +120,6 @@ document.getElementById("form-registro-comprador").addEventListener("input", fun
     document.getElementById("estado").classList.remove("input-error");
     document.getElementById("ciudad").classList.remove("input-error");
     document.getElementById("domicilio").classList.remove("input-error");
+    document.getElementById("fechanacimiento").classList.remove("input-error");
 });
 //})
