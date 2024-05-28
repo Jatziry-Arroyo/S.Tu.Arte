@@ -4,6 +4,10 @@ body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
 }
 
+#body {
+    font-family: 'Poppins', sans-serif;
+}
+
 #nav-fixed {
     position: fixed;
     width: 100%;
@@ -79,12 +83,13 @@ a.nav-link:focus {
 }
 
 .img-icon {
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
 #icono-logo {
     height: 52px;
+    padding-bottom: 5px;
 }
 
 .navbar-collapse {
@@ -96,6 +101,7 @@ a.nav-link:focus {
 .nav-item {
     color: white;
     height: 85px;
+    padding-top: 5px;
 }
 
 nav,
@@ -181,6 +187,7 @@ h1 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     margin-left: 2%;
+    text-align: center;
 }
 
 /*Estilos de forulario*/
@@ -198,7 +205,7 @@ h1 {
 
 .container-form{
     border: 2px solid white;
-    border-radius: 1em;
+    border-radius: 25px;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -207,26 +214,25 @@ h1 {
     margin-left: 10%;
 }
 
-textarea,
-h2 {
+textarea,label {
     justify-content: center;
     display: inline-block;
     width: 100%;
     text-align: left;
     font-family: "Poppins", sans-serif;
-    color: white;
     font-weight: 300;
     font-style: normal;
+    border-radius: 10px;
 }
 
 input
 {
-    font: 1em sans-serif;
+    font: 1em 'Poppins';
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #999;
     padding: 10px;
-    border-radius: 1em;
+    border-radius: 10px;
     align-items: center;
 }
 
@@ -235,7 +241,7 @@ button {
     font-family: "Poppins", sans-serif;
     color: white;
     background-color: #B100A8;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     margin-left: 25%;
     padding: 9px 15px;
     width: 150px;
@@ -257,4 +263,8 @@ button {
 
 .input-error {
     border: 5px solid #d38f33;
+}
+
+label {
+    padding-top: 20px;
 }
