@@ -114,24 +114,23 @@
                         <div class="invalid-feedback">
                             Puedes usar letras, números, puntos, comas y guiones.
                         </div>
-                    <label class="form-label">¿Comprador o Artistx?</label>
 
+                    <label class="form-label">¿Comprador o Artistx?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status" id="comprador" value="1">
+                        <input class="form-check-input" type="radio" name="status" id="comprador" value="1" required>
                         <label class="form-check-label" for="comprador">
                             Comprador
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status" id="artistx" value="2">
+                        <input class="form-check-input" type="radio" name="status" id="artistx" value="2" required>
                         <label class="form-check-label" for="artistx">
                             Artista
                         </label>
                     </div>
                     <div class="invalid-feedback">
-                        Puedes usar letras, números, puntos, comas y guiones.
-                    </div>
-                    
+                        Debes seleccionar una opción.
+                    </div>                    
 
                     <label for="correo" class="form-label">Correo electrónico</label>
                     <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo Electrónico" required>
@@ -147,7 +146,7 @@
                     <label for="contraseña" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="contraseña" placeholder="Ingrese una contraseña" required>
                         <div class="invalid-feedback">
-                            Puedes usar letras, números, puntos, comas y guiones.
+                            Contraseña inválida.
                         </div>
                     <label for="reincontraseña" class="form-label">Reingrese su contraseña</label>
                     <input type="password" class="form-control" id="reincontraseña"

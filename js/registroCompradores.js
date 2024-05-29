@@ -123,3 +123,10 @@ document.getElementById("form-registro-comprador").addEventListener("input", fun
     document.getElementById("fechanacimiento").classList.remove("input-error");
 });
 //})
+
+document.addEventListener('DOMContentLoaded', function() {
+    let registro = JSON.parse(localStorage.getItem('registro'));
+    if (registro) {
+        console.log(registro);
+    }
+});

@@ -22,21 +22,11 @@ aliasInput.addEventListener('input', function () {
     validateRegex(aliasInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ]{3,30}$/, 'Debes ingresar mínimo de 3 carácteres y máximo 30');
 });
 facultadInput.addEventListener('input', function () {
-    validateRegex(facultadInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ-]{3,30}$/, 'Debes ingresar mínimo de 10 carácteres y máximo 60');
+    validateRegex(facultadInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ-]{3,30}$/, 'Debes ingresar mínimo de 8 carácteres y máximo 60');
 });
 reseInput.addEventListener('input', function () {
-    validateRegex(reseInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ]{5,30}$/, 'Debes ingresar mínimo de 5 carácteres y máximo 70');
+    validateRegex(reseInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ]{5,30}$/, 'Debes ingresar mínimo de 5 carácteres y máximo 30');
 });
-
-
-/*document.getElementById("btn-guardar").addEventListener("click", function() {
-    if (document.getElementById("form-registro-artistx").checkValidity()) {
-        alert("Formulario válido. Datos guardados correctamente.");
-    } else {
-        alert("Por favor, completa todos los campos correctamente.");
-    }
-});
-*/
 
 nacimientoInput.addEventListener('input', function () {
     const birthDate = new Date(nacimientoInput.value);
@@ -44,7 +34,9 @@ nacimientoInput.addEventListener('input', function () {
     const age = today.getFullYear() - birthDate.getFullYear();
     const monthDifference = today.getMonth() - birthDate.getMonth();
     
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) { age--; }
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age = age - 1;
+    }
     if (age < 18) { nacimientoInput.setCustomValidity('Debes tener al menos 18 años para registrarte.'); }
     else { nacimientoInput.setCustomValidity(''); }
     nacimientoInput.reportValidity();
@@ -64,8 +56,15 @@ form.addEventListener('submit', function (event) {
             rese: reseInput.value
         };
         console.log(artistx);
-        alert("Formulario válido. Datos guardados correctamente.");
+        alert("Datos guardados correctamente.");
         form.reset();
         form.classList.remove('was-validated');
     }
 }, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    let registro = JSON.parse(localStorage.getItem('registro'));
+    if (registro) {
+        console.log(registro);
+    }
+});

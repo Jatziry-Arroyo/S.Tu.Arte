@@ -89,45 +89,46 @@
     <br><br><br>
 
     <!--formulario-->
-    <div class="container-form border">
-        <form id="form-registro-artistx" class="row" novalidate>
+    <div class="container">
+    <div id="border-form" class="col-12 border">
+        <form id="form-registro-artistx" class="row g-3 needs-validation" novalidate>
             <p class="subtitulo">Datos de Perfil</p>
-            <div class="form-group col-12" id="fecha">
-                <label for="nacimiento">Escoge tu fecha de nacimiento</label>
-                <input type="date" id="nacimiento" name="nacimiento" required>
+            <label for="nacimiento" class="form-label">Escoge tu fecha de nacimiento</label>
+                <input type="date" id="nacimiento" name="nacimiento" class="form-control" required>
                 <div class="invalid-feedback">
-                    Ingresa una fecha válida, debes er mayor de edad (+18).
+                    Ingresa una fecha válida, debes ser mayor de edad (+18).
                 </div>
-            </div>
-            <div class="form-group col-12">
-                <label for="alias">¿Tienes un alias?</label>
-                <input type="text" id="alias" name="alias" placeholder="Van_Gogh" required>
+
+                <label for="alias" class="form-label">¿Tienes un alias?</label>
+                <input type="text" id="alias" name="alias" placeholder="Van_Gogh" class="form-control" required>
                 <div class="invalid-feedback">
                     Puedes usar letras, números, puntos, comas y guiones.
                 </div>
-            </div>
-            <div class="form-group col-12">
-                <label for="facultad">Escribe tu escuela</label>
-                <input type="text" id="facultad" name="facultad" required placeholder="Ej: FES Iztacala" required>
+
+                <label for="facultad" class="form-label">Escribe tu escuela</label>
+                <input type="text" id="facultad" name="facultad" placeholder="Ej: FES Iztacala" class="form-control" required>
                 <div class="invalid-feedback">
                     Ingresa tu escuela, por favor.
                 </div>
-            </div>
-            <div class="form-group col-12">
-                <label for="reseña">Escribe una reseña de tu trabajo</label>
+
+                <label for="reseña" class="form-label">Escribe una reseña de tu trabajo</label>
                 <textarea id="reseña" name="reseña" placeholder="Soy un Artista Emergente, que trabaja con pintura al óleo, me encanta el dibujo y la escultura. Te invito a conocer mi trabajo."
-                    required></textarea>
-                    <div class="invalid-feedback">
-                        Ingresa un texto válido (letras, números, comas y puntos).
-                    </div>
-            </div>
-            <div class="col-12" id="botones">
-                <button type="submit" id="btn-guardar">Guardar</button>
-                <button type="button" class="btn-primary btn-lg" onclick="goBack()">Regresar</button>
+                    class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Ingresa un texto válido (letras, números, comas y puntos).
+                </div>
+
+            <div class="row" id="botones">
+                <div class="col-6">
+                    <button type="submit" id="btn-guardar" class="btn-form btn btn-primary">Guardar</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn-form btn btn-primary" onclick="goBack()">Regresar</button>
+                </div>             
             </div>
         </form>
 
-    </div>
+    </div></div>
 
     <br><br><br><br>
     <footer class="footer bg-dark text-white pt-2 pb-2">
