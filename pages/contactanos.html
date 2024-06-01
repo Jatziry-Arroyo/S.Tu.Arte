@@ -92,62 +92,61 @@
         </div>
     </nav>
     <br>
-    <div class="container-fluid">
-        <div class="row" id="side-text">
-            <div class="col-sm" id="left">
-                <h2>Contáctanos</h2> <br> <br><br>
-                <h4>¡Creemos una comunidad amante del arte!</h4> <br><br><br><br>
-                <h6>Extérnanos tus dudas y
-                    sugerencias.</h6>
-            </div>
-            <div class="col-sm" id="form">
-                <form id="contactanos-form">
-                    <ul>
-                        <li>
-                            <label for="name">Nombre: </label>
-                            <input class="form-control" type="name" id="name" name="user_mail"
-                                placeholder="Escribe tu nombre aquí" />
-                            <div id="nameError" class="error"></div>
-                        </li>
-                        <li>
-                            <label for="number">Número de Teléfono: </label>
-                            <input class="form-control" type="tel" id="phone" name="number"
-                                placeholder="Inserta tu número a 10 dígitos" />
-                            <div id="phoneError" class="error"></div>
-                        </li>
-                        <li>
-                            <label id="identificacion" for="validationCustom03">Elige la opción en la que te
-                                identifiques:
-                            </label>
-                            <select class="form-select user-options" id="options">
-                                <option selected disabled value="">Opciones</option>
-                                <option value="1">Artistx</option>
-                                <option value="2">Compradxr</option>
-                                <option value="3">Visitantx</option>
-                            </select>
-                            <div id="optionsError" class="error"></div>
-                        </li>
-                        <li>
-                            <label for="validationCustom04">Correo electronico: </label>
-                            <input class="form-control" type="email" id="email" name="user_mail" placeholder="e-mail">
-                            <div id="emailError" class="error"></div>
-                        </li>
-                        <li>
-                            <label id="mensaje" for="msm">Escríbenos: </label>
-                            <textarea class="form-control" id="message" type="msm"
-                                placeholder="Escribe tu mensaje aquí"></textarea>
-                            <div id="messageError" class="error"></div>
-                        </li>
-                        <li class="button">
-                            <button type="submit" id="submitBtn">Enviar</button>
-                        </li>
-                    </ul>
-                </form>
-                <div id="errorMessages"></div>
+    <br><br><br><br>
+    <div class="container">
+        <div id="border-form" class="col-12 border">
+            <div class="row" id="side-text">
+                <div class="col-md-6" id="left">
+                    <h2>Contáctanos</h2> <br> <br><br>
+                    <h4>¡Creemos una comunidad amante del arte!</h4> <br><br><br><br>
+                    <h6>Extérnanos tus dudas y
+                        sugerencias.</h6>
+                </div>
+                <div class="col-md-6" id="form">
+                    <form id="contactanos-form" novalidate>
+
+                        <label for="name" class="form-label">Nombre completo </label>
+                        <input class="form-control" type="name" id="name" placeholder="Escribe tu nombre aquí" />
+                        <div id="nameError" class="error"></div>
+
+                        <label for="phone" class="form-label">Número de teléfono </label>
+                        <input class="form-control" type="tel" id="phone"
+                            placeholder="Inserta tu número a 10 dígitos" />
+                        <div id="phoneError" class="error"></div>
+
+                        <label id="identificacion" class="form-label" for="options">Elige la opción en la
+                            que te
+                            identifiques
+                        </label>
+                        <select class="form-select user-options" id="options">
+                            <option selected disabled value="">Opciones</option>
+                            <option value="1">Artista</option>
+                            <option value="2">Comprador/a</option>
+                            <option value="3">Visitante</option>
+                        </select>
+                        <div id="optionsError" class="error"></div>
+
+                        <label for="email" class="form-label">Correo electronico </label>
+                        <input class="form-control" type="email" id="email" placeholder="e-mail">
+                        <div id="emailError" class="error"></div>
+
+                        <label id="mensaje" class="form-label" for="message">Escríbenos </label>
+                        <textarea class="form-control" id="message" type="msm"
+                            placeholder="Escribe tu mensaje aquí"></textarea>
+                        <div id="messageError" class="error"></div>
+
+                        <div class="row" id="btn-row">
+                            <div class="col-12">
+                                <button type="submit" id="submitBtn">Enviar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div id="errorMessages"></div>
+                </div>
             </div>
         </div>
     </div>
-
 
     <br><br><br><br>
     <br><br><br><br>
@@ -176,10 +175,6 @@
                     <p id="footerEmail">
                         <i class="fa fa-envelope" mr-3"></i>
                         <a href="#" class="text-light">contacta.stuarte@gmail.com</a>
-                    </p>
-                    <p id="footerPhone">
-                        <i class="fas fa-phone"></i>
-                        +52 67987532
                     </p>
                 </div>
                 <hr class="mb-4">
