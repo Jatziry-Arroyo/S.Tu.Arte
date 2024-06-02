@@ -79,7 +79,7 @@ a.nav-link:focus {
 }
 
 .img-icon {
-  height: 28px;
+  height: 20px;
   justify-content: left;
 }
 
@@ -95,7 +95,8 @@ a.nav-link:focus {
 
 .nav-item {
   color: white;
-  height: 85px;
+  height: 72px;
+  padding-top: 5px;
 }
 
 nav,
@@ -153,7 +154,32 @@ nav {
   .nav-link {
     text-align: left;
     justify-content: left;
+    padding-left: 15px;
   }
+
+  .navbar {
+    display: block;
+  }
+
+  .container-fluid {
+    width: 240px;
+  }
+
+  #div-nav {
+    margin-left: 5%;
+  }
+
+  .nav-link:hover,
+  a.nav-link:hover {
+    color: white;
+    cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
+  }
+
+  .navbar-collapse {
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
 }
 
 /*
@@ -172,24 +198,9 @@ nav {
   border-radius: 25px;
   margin-left: 5px;
   margin-right: 5px;
+  padding: 20px;
+  margin: 0 auto;
 }
-
-/*
-form {
-  margin-top: 20px;
-  width: 90%;
-  border-radius: 1em;
-}*/
-/*
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-form li+li {
-  margin-top: 2em;
-}*/
 
 label {
   display: inline-block;
@@ -205,8 +216,6 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #999;
-  /*padding-top: 20px;
-  padding-bottom: 20px;*/
 }
 
 input:focus,
@@ -219,7 +228,7 @@ textarea {
   height: 5em;
 }
 
-#name #email #message #options #phone {
+#fullname #user-email #message #options #cellphone {
   padding: 10px;
   white-space: nowrap;
 }
@@ -228,20 +237,20 @@ textarea {
   padding-left: 90px;
 }
 
-
-
-
 button {
   font-family: "Poppins", sans-serif;
   color: white;
   background-color: #B100A8;
   border-radius: 10px;
   margin-top: 10px;
-  padding: 9px 15px;
+  margin-left: 0.5em;
+  /*margin-left: 410px;*/
+  padding: 6px 12px;
   width: 150px;
   float: left;
 }
 
+/*
 #btn-row {
   margin-left: 0px;
   padding-left: 0px;
@@ -250,7 +259,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
 
-}
+}*/
 
 #submitBtn {
   margin-left: 0px;
@@ -291,8 +300,8 @@ span {
 
 
 h2 {
-  font-size: 55px;
-  margin-top: 100px;
+  font-size: 40px;
+  margin-top: 90px;
 
 }
 
@@ -324,14 +333,15 @@ h6 {
 }*/
 #contactanos-form {
   width: 100%;
-
 }
 
 .form-label {
   width: 100%;
   padding-top: 20px;
-  padding: 10px;
+  /*padding: 10px;*/
 }
+
+
 
 footer {
   font-family: "Poppins", sans-serif;

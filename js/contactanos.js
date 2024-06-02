@@ -2,12 +2,12 @@ document.getElementById('contactanos-form').addEventListener('submit', function 
     event.preventDefault(); // Prevent form submission
 
 
-    var name = document.getElementById('name').value.trim();
-    var telephone = document.getElementById('phone').value.trim();
+    var name = document.getElementById('full-name').value.trim();
+    var telephone = document.getElementById('cellphone').value.trim();
     //var selectedOption = document.getElementById('options').value;
     var numberOption = document.getElementById('options');
     var selectedOption = numberOption.options[numberOption.selectedIndex].text; //devuelve no el no. de opcion sino el texto de esa opcion
-    var email = document.getElementById('email').value.trim();
+    var email = document.getElementById('user-email').value.trim();
     var message = document.getElementById('message').value.trim();
 
     // Regular expressions for validation
@@ -25,12 +25,12 @@ document.getElementById('contactanos-form').addEventListener('submit', function 
     // Validaciones
     if (!nameRegex.test(name)) {
         nameError = "Los nombres no llevan números, ¿o sí?";
-        document.getElementById("name").classList.add("input-error");
+        document.getElementById("full-name").classList.add("input-error");
     }
 
     if (!telephoneRegex.test(telephone)) {
         phoneError = "Por favor sólo ingresa números y que sean 10";
-        document.getElementById("phone").classList.add("input-error");
+        document.getElementById("cellphone").classList.add("input-error");
     }
 
     if (selectedOption === "Opciones") {
@@ -40,7 +40,7 @@ document.getElementById('contactanos-form').addEventListener('submit', function 
 
     if (!emailRegex.test(email)) {
         emailError = "Se esperaba un email, no una obra de arte";
-        document.getElementById("email").classList.add("input-error");
+        document.getElementById("user-email").classList.add("input-error");
     }
     if (message.length < 15) {
         messageError = "Tu mensaje no nos dice mucho, escribe más por favor";
