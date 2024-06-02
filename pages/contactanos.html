@@ -95,36 +95,42 @@
                         sugerencias.</h6>
                 </div>
                 <div class="col-md-6" id="form">
-                    <form id="contactanos-form" novalidate>
+                    <form id="contactanos-form" class="needs-validation" novalidate>
 
                         <label for="full-name" class="form-label">Nombre completo </label>
-                        <input class="form-control" type="name" id="full-name" placeholder="Escribe tu nombre aquí" />
+                        <input class="form-control" type="name" id="full-name" placeholder="Escribe tu nombre aquí"
+                            minlength="3" required>
                         <div id="nameError" class="error"></div>
+                        <div class="invalid-feedback">Los nombres no llevan números, ¿o sí?</div>
 
                         <label for="cellphone" class="form-label">Número de teléfono </label>
                         <input class="form-control" type="tel" id="cellphone"
-                            placeholder="Inserta tu número a 10 dígitos" />
+                            placeholder="Inserta tu número a 10 dígitos" minlength="10" maxlength="10" required>
                         <div id="phoneError" class="error"></div>
+                        <div class="invalid-feedback">Por favor sólo ingresa números y que sean 10</div>
 
                         <label id="identificacion" class="form-label" for="options">Elige la opción en la que te
                             identifiques
                         </label>
-                        <select class="form-select user-options" id="options">
+                        <select class="form-select user-options" id="options" required>
                             <option selected disabled value="">Opciones</option>
                             <option value="1">Artista</option>
                             <option value="2">Comprador/a</option>
                             <option value="3">Visitante</option>
                         </select>
                         <div id="optionsError" class="error"></div>
+                        <div class="invalid-feedback">Por favor selecciona una opción</div>
 
                         <label for="user-email" class="form-label">Correo electronico </label>
-                        <input class="form-control" type="email" id="user-email" placeholder="e-mail">
+                        <input class="form-control" type="email" id="user-email" placeholder="e-mail" required>
                         <div id="emailError" class="error"></div>
+                        <div class="invalid-feedback">Se esperaba un email, no una obra de arte</div>
 
                         <label id="mensaje" class="form-label" for="message">Escríbenos </label>
-                        <textarea class="form-control" id="message" type="msm"
-                            placeholder="Escribe tu mensaje aquí"></textarea>
+                        <textarea class="form-control" id="message" type="msm" placeholder="Escribe tu mensaje aquí"
+                            minlength="15" required></textarea>
                         <div id="messageError" class="error"></div>
+                        <div class="invalid-feedback">Tu mensaje no nos dice mucho, escribe más por favor</div>
 
                         <div class="row" id="btn-row">
                             <div class="col-12">

@@ -273,7 +273,11 @@ span {
   font-style: normal;
 
 }*/
+.invalid-feedback {
+  text-align: left;
+}
 
+/*
 .error {
   color: red;
   text-align: left;
@@ -281,7 +285,7 @@ span {
 
 .input-error {
   border: 5px solid #d38f33;
-}
+}*/
 
 #side-text {
   font-family: "Poppins", sans-serif;
