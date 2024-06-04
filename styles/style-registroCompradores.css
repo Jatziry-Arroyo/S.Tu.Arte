@@ -9,15 +9,6 @@ body {
     width: 100%;
 }
 
-/*#div-nav {
-margin-left: 1%;
-margin-right: 1%;
-/*width: 100%;
-
-justify-content: left;
-text-align: left;
-height: 72px;
-}*/
 #div-nav {
     top: 50%;
 }
@@ -263,7 +254,6 @@ button {
     background-color: #B100A8;
     border-radius: 10px;
     margin-top: 10px;
-    /*margin-left: 410px;*/
     padding: 6px 12px;
     width: 150px;
 }
@@ -305,8 +295,4 @@ button {
 .error {
     color: red;
     text-align: left;
-}
-
-.input-error {
-    border: 5px solid #d38f33;
 }
