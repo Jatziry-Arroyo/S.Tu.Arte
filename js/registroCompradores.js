@@ -1,52 +1,65 @@
-/*'use strict'
+'use strict';
+const form = document.querySelector("#form-registro-comprador");
 
-const btn_guardar = document.querySelector('#btn-guardar');
-const pais = document.querySelector('#pais');
-const estado = document.querySelector('#estado');
-const ciudad = document.querySelector('#ciudad');
-const direccion = document.querySelector('#direccion');
-const fechanacimiento = document.querySelector('#fechanacimiento');
+const state = document.getElementById('estado');
+const city = document.getElementById('ciudad');
+const address = document.getElementById('domicilio');
+const birthday = document.getElementById('fechanacimiento');
 
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-let validar = () => {
-    let inputs_requeridos = document.querySelectorAll('#form-registro-comprador [required]');
-    let error = false;
+    form.classList.add("was-validated");
 
-    for (let i = 0; i < inputs_requeridos.length; i++) {
-        if (inputs_requeridos[i].value == '') {
-            inputs_requeridos[i].classList.add('input-error');
-            error = true;
-        } else {
-            inputs_requeridos[i].classList.remove('input-error');
+    if (form.checkValidity()) {
+        let registroComprador = {
+            "estado": state.value.trim(),
+            "ciudad": city.value.trim(),
+            "direccion": address.value.trim(),
+            "fecha-nacimiento": birthday.value,
+
         }
+        console.log(registroComprador);
+
+        form.reset();
+        form.classList.remove("was-validated");
     }
-    return error;
-};
+}, false);
 
-let obtener_datos = () => {
-    let error = validar();
-    if (error) {
-        Swal.fire({
-            'title': 'No pudimos enviar sus datos, revise las casillas',
-            'icon': 'warning',
-        });
-
+function validateRegex(input, regex, errorMessage) {
+    if (!regex.test(input.value)) {
+        input.setCustomValidity(errorMessage);
     } else {
-        Swal.fire({
-            'title': 'Enviaste tus datos de forma exitosa',
-            'icon': 'success',
-        });
-
+        input.setCustomValidity("");
     }
+    input.reportValidity();
+}
 
-};
-btn_guardar.addEventListener('click', obtener_datos);
+state.addEventListener("input", function () {
+    validateRegex(state, /^[a-zA-Z,.\sáéíóúÁÉÍÓÚñÑüÜ]{3,50}$/, "Solo ingresa letras");
+});
+city.addEventListener("input", function () {
+    validateRegex(city, /^[a-zA-Z,.\sáéíóúÁÉÍÓÚñÑüÜ]{3,50}$/, "Solo ingresa letras");
+});
+address.addEventListener("input", function () {
+    validateRegex(address, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ#]{15,400}$/, "Ingresa calle, número, colonia y C.P. en ese orden");
+});
+
+birthday.addEventListener("input", function () {
+    if (birthday.value == "") {
+        birthday.setCustomValidity("Hay un error");
+    } else {
+        birthday.setCustomValidity("");
+    }
+    birthday.reportValidity();
+});
 
 function goBack() {
     window.history.back();
 }
-*/
 
+/*
 document.getElementById("form-registro-comprador").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -122,4 +135,4 @@ document.getElementById("form-registro-comprador").addEventListener("input", fun
     document.getElementById("domicilio").classList.remove("input-error");
     document.getElementById("fechanacimiento").classList.remove("input-error");
 });
-//})
+//})*/
