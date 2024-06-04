@@ -130,10 +130,10 @@ nav {
 }
 
 @media (max-width:992px) {
-    /*.nav-item{
+    .nav-item {
         text-align: left;
         justify-content: left;
-    }*/
+    }
     .navbar-nav {
         text-align: left;
         padding-right: 25px;
@@ -151,8 +151,8 @@ nav {
 	.navbar-collapse{
 		height: 480px;
 		background-color: rgba(0,0,0,0.9);
-	}S
-	.navbar{
+	}
+	.navbar {
 		display: block;
 	}
 	.container-fluid {
@@ -161,9 +161,10 @@ nav {
 	#div-nav{
 		margin-left: 5%;
 	}
-	.nav-link:hover, a.nav-link:hover{
+	.nav-link:hover, 
+    a.nav-link:hover {
 		color: white;
-		cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
+		cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
 	}
 
 }
