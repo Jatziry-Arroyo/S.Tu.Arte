@@ -1,7 +1,7 @@
+/* Navbar */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
     background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.75));
-    font-family: 'Poppins', sans-serif;
 }
 
 #nav-fixed{
@@ -49,7 +49,7 @@ height: 72px;
     opacity: 1;
     color: white;
     font-size: 17px;
-    text-align: center;
+    text-align: left;
 }
 
 #pp {
@@ -64,7 +64,7 @@ height: 72px;
 
 .nav.link:hover, a.nav-link:hover{
     color: white;
-    cursor: url("../assets/iconamoon--enter-duotone.png"),auto;
+    cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
 }
 
 a.nav-link:focus {
@@ -78,7 +78,7 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -94,7 +94,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
 }
 
 nav,a,li,ul {
@@ -117,16 +118,20 @@ nav {
     z-index: 5;
 }
 
+
 .navbar-brand {
     text-align: left;
     justify-content: left;
     position: fixed;
 }
 
-.navbar-toggler{width: auto;}
+.navbar-toggler{
+  width: auto;
+  margin-left: 0px;
+}
 
 @media (max-width:992px) {
-    .nav-item{
+    .nav-item {
         text-align: left;
         justify-content: left;
     }
@@ -142,11 +147,33 @@ nav {
     .nav-link{
         text-align: left;
         justify-content: left;
+        padding-left: 15px;
     }
+    .navbar-collapse{
+        height: 480px;
+        background-color: rgba(0,0,0,0.9);
+    }
+    .navbar {
+        display: block;
+    }
+    .container-fluid {
+        width: 240px;
+    }
+    #div-nav{
+        margin-left: 5%;
+    }
+    .nav-link:hover, 
+    a.nav-link:hover {
+        color: white;
+        cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
+    }
+
 }
 
-h1, label {color:white;
-font-family: 'Poppins', sans-serif;}
+
+h1{color:white}
+
+/* Formulario */
 
 #formulario{
     font-family: 'Poppins', sans-serif;
@@ -163,34 +190,34 @@ font-family: 'Poppins', sans-serif;}
     color: white !important;
 }
 
-#btn-morado {
-    background-color: #6f42c1;
-    border-color: #6f42c1;
+#btn-rosa {
+    background-color: #B100A8;
+    border-color: #B100A8;
     color: white;
 }
 
-#btn-morado:hover {
-    background-color: #5a33a7;
-    border-color: #5a33a7;
+#btn-rosa:hover {
+    background-color: #B100A8;
+    border-color: #B100A8;
 }
 
 .text-light:hover
+
+/* Footer */
 
 footer{
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
-#footerDescription{
+#footerDescription, #footerTC, #footerHome, #footerEmail {
     font-size: 80%;
+    text-align: center;
 }
-#footerTC{
-    font-size: 80%;
-}
-#footerHome{
-    font-size: 80%;
-}
+
 #footerEmail{
     font-size: 80%;
+    color: white;
+    ;
 }
 #footerPhone{
     font-size: 80%;
