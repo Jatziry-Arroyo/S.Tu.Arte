@@ -41,6 +41,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         document.getElementById('alert-container').innerHTML = alertHtml;
     } else {
         // Se enviaría el formulario para inicar sesión. 
+        let usuario = {
+            'useremail': email,
+            'userpassword': password
+        }
+        console.log(usuario);
+        localStorage.setItem("Usuario", JSON.stringify(usuario));
     }
 });
 
