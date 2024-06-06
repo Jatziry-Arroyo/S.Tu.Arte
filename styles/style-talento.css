@@ -49,7 +49,7 @@ height: 72px;
     opacity: 1;
     color: white;
     font-size: 17px;
-    text-align: center;
+    text-align: left;
 }
 
 #pp {
@@ -78,7 +78,7 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -94,7 +94,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
 }
 
 nav,a,li,ul {
@@ -117,13 +118,17 @@ nav {
     z-index: 5;
 }
 
+
 .navbar-brand {
     text-align: left;
     justify-content: left;
     position: fixed;
 }
 
-.navbar-toggler{width: auto;}
+.navbar-toggler{
+  width: auto;
+  margin-left: 0px;
+}
 
 @media (max-width:992px) {
     .nav-item{
@@ -142,22 +147,48 @@ nav {
     .nav-link{
         text-align: left;
         justify-content: left;
+        padding-left: 15px;
+    }
+
+    .navbar-collapse{
+        height: 480px;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    /*.navbar{
+        display: block;
+    }
+
+    .container-fluid{
+        width: 240px;
+    }*/
+
+    #div-nav{
+        margin-left: 5%;
+    }
+
+    .nav-link:hover,
+    a.nav-link:hover{
+        color: white;
+        cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
     }
 }
 
-
 /*talento mexa*/
 h1{
-    margin-top: -30px;
+    margin-top: 20px;
     text-align: center;
-    margin-left: 75px;
     font-family: 'Poppins', sans-serif;
+    font-size: normal;
+    margin-left: 80px;
 }
 
 .talent{
     margin-top: -200px;
     padding: 40px;
-    margin-left: 70px;
+    margin-left: 200px;
+    font-family: 'Poppins', sans-serif;
+    font-size: normal;
 }
 
 .section-title{
@@ -169,7 +200,7 @@ h1{
 }
 
 .talent .carousel{
-    max-width: 1250px;
+    max-width: 1350px;
 }
 
 .carousel-item{
@@ -186,80 +217,124 @@ h1{
     justify-content: center;
 }
 
+.icon{
+    color: white;
+}
+
 .talent-img{
+    align-items: center;
     margin-top: 200px;
-    width: 400px;
+    width: 500px;
+    font-size: 50px;
 }
 
 .talent-description{
     max-width: 70%;
-    font-size: 15px;
+    font-size: normal;
     text-align: center;
     justify-content: center;
     color: white;
 }
 
 .talent-info{
+    display: flex;
+    justify-content: center;
+}
+
+
+.artist{
     font-weight: bold;
     text-align: center;
     color: white;
-    background-color: purple;
+    background-color: #3330E4;
     padding: 13px;
     border-radius: 15px;
     margin-top: 10px;
+    margin-right: 50px;
+    font-size: normal;
 }
 
-span{
-    background-color: black;
-}
-
-span .hover{
-    background-color:white;
-}
-
-
-.talent-info p{
-    margin-bottom: 0;
+.obra-type{
+    font-weight: bold;
     text-align: center;
+    color: black;
+    background-color: #FBB454;
+    padding: 13px;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-size: normal;
 }
 
-.artist{
-    font-size: 15px;;
-}
-
-.talent-info .obra-type{
-    font-size: 15px;
+.color{
     color: white;
+    font-size: 2.5em;
 }
 
-
-
-@media screen and (max-width:800px) {
+@media screen and (max-width:1100px) {
+    .talent{
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+    }
+    
     .talent-img{
-        height: 150px;
-        width: 150px;
+        height: 170px;
+        width: 170px;
     }
     .talent-description{
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .talent-info {
-        font-size: 9px;
+        font-size: 11px;
     }
+
+   
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:500px) {
+    .talent{
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .talent-img{
+        height: 120px;
+        width: 120px;
+    }
+    .talent-description{
+        font-size: 15px;
+    }
+    .talent-info {
+        font-size: 11px;
+    }
+ 
+}
+
+
+@media screen and (max-width:300px) {
+    .talent{
+        align-items: center;
+        justify-content: center;
+        
+    }
     .talent-img{
         height: 80px;
         width: 80px;
     }
     .talent-description{
-        font-size: 12px;
+        font-size: 11px;
     }
     .talent-info {
-        font-size: 9px;
+        font-size: 10px;
     }
+   
 }
+
+
+
+
+
 
 /*footer*/
 
