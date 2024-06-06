@@ -33,6 +33,7 @@ loginForm.addEventListener('submit', function (event) {
     if (!loginForm.checkValidity()) {
         loginForm.reportValidity();
     } else {
+
         // Crear objeto usuario
         let usuario = {
             'useremail': emailInput.value,
@@ -49,6 +50,7 @@ loginForm.addEventListener('submit', function (event) {
         // Reinicia el formulario
         loginForm.reset();
         loginForm.classList.remove('was-validated');
+
     }
 });
 
