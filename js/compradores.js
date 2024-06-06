@@ -1,79 +1,97 @@
 'use strict';
-//Asegurarnos que estamos validando el formulario al dar click
-//en siguiente
-const btn_guardar=document.querySelector('#btn-guardar');
-const nombre =document.querySelector('#nombre');
-const apaterno =document.querySelector('#apaterno');
-const amaterno =document.querySelector('#amaterno');
-const comprador =document.querySelector('#comprador');
-const artistx =document.querySelector('#artistx');
-const correo =document.querySelector('#correo');
-const telefono =document.querySelector('#telefono');
-const contraseña =document.querySelector('#contraseña');
-const reincontraseña =document.querySelector('#reincontraseña');
-const acepto =document.querySelector('#acepto');
 
-let validar= () =>{
-    let inputs_requeridos = document.querySelectorAll('#form-registro [required]');
-    let error= false;
+const btn_guardar = document.getElementById('btn-guardar');
+const nombre = document.getElementById('nombre');
+const apaterno = document.getElementById('apaterno');
+const amaterno = document.getElementById('amaterno');
+const comprador = document.getElementById('comprador');
+const artistx = document.getElementById('artistx');
+const correo = document.getElementById('correo');
+const telefono = document.getElementById('telefono');
+const contraseña = document.getElementById('contraseña');
+const reincontraseña = document.getElementById('reincontraseña');
+const acepto = document.getElementById('acepto');
+const form = document.getElementById('form-compradores');
 
-    for(let i=0; i<inputs_requeridos.length;i++){
-        if(inputs_requeridos[i].value ==''){
-            inputs_requeridos[i].classList.add('input-error');
-            error = true;
-        } else{
-            inputs_requeridos[i].classList.remove('input-error');
-        }
+function validateRegex(input, regex, errorMessage) {
+    if (!regex.test(input.value)) {
+        input.setCustomValidity(errorMessage);
+    } else {
+        input.setCustomValidity('');
     }
-    return error;
-};
+    input.reportValidity();
+}
 
-let obtener_datos=()=>{
-    let error= validar ();
-    if (error){
-        Swal.fire({
-            'title': 'No pudimos enviar sus datos, revise las casillas',
-            'icon': 'warning',
-        });
+const regexNombre = /^[a-zA-Z\sáéíóúÁÉÍÓÚñÑüÜ]{3,30}$/;
+const regexCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+const regexTelefono = /^\d{10}$/;
+const regexContraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
-    }else{
-        Swal.fire({
-            'title': 'Enviaste tus datos de forma exitosa',
-            'icon': 'success',
-        });
-        
-    }
-
-};
-btn_guardar.addEventListener('click', obtener_datos);
-
-//Esto es lo que hace que al escoger cierto radius se muestre determinando formulario
-
-document.getElementById("btn-guardar").addEventListener("click", function() {
-    var status = document.querySelector('input[name="status"]:checked').value;
-
-    if (status === "1") {
-        window.location.href = "registroComprador.html";
-    } else if (status === "2") {
-        window.location.href = "registroartistx.html";
-    }
+nombre.addEventListener('input', function () {
+    validateRegex(nombre, regexNombre, 'Debes ingresar un nombre válido (mínimo 3 caracteres y máximo 30)');
+});
+apaterno.addEventListener('input', function () {
+    validateRegex(apaterno, regexNombre, 'Debes ingresar un apellido válido (mínimo 3 caracteres y máximo 30)');
+});
+amaterno.addEventListener('input', function () {
+    validateRegex(amaterno, regexNombre, 'Debes ingresar un apellido válido (mínimo 3 caracteres y máximo 30)');
+});
+correo.addEventListener('input', function () {
+    validateRegex(correo, regexCorreo, 'Debes ingresar un correo electrónico válido');
+});
+contraseña.addEventListener('input', function () {
+    validateRegex(contraseña, regexContraseña, 'La contraseña debe tener al menos 8 caracteres, una letra minúscula, una letra mayúscula, un número y un caracter especial');
+});
+telefono.addEventListener('input', function () {
+    validateRegex(telefono, regexTelefono, 'Debes ingresar un número de teléfono válido (10 dígitos)');
 });
 
-//Hacer que la contraseña y la confirmación de la contraseña coincidan 
+reincontraseña.addEventListener('input', validarContraseña);
 
 function validarContraseña() {
-    var contraseña = document.getElementById("contraseña").value;
-    var reincontraseña = document.getElementById("reincontraseña").value;
-
-    if (contraseña.length < 8) {
-        document.getElementById("error-contraseña").innerText = "La contraseña debe tener al menos 8 caracteres";
-        return false;
+    let mensaje = '';
+    if (contraseña.value !== reincontraseña.value) {
+        mensaje = 'Las contraseñas no coinciden';
     }
-
-    if (contraseña !== reincontraseña) {
-        document.getElementById("error-contraseña").innerText = "Las contraseñas no coinciden";
-        return false;
-    }
-
-    return true;
+    reincontraseña.setCustomValidity(mensaje);
+    reincontraseña.reportValidity();
 }
+
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    form.classList.add('was-validated');
+    const statusElement = document.querySelector('input[name="status"]:checked');
+
+    if (form.checkValidity()) {
+        let registro = {
+            'nombre': nombre.value,
+            'apaterno': apaterno.value,
+            'amaterno': amaterno.value,
+            'comprador/artista': statusElement.value,
+            'correo': correo.value,
+            'telefono': telefono.value,
+            'password': contraseña.value
+        };
+        localStorage.setItem('registro', JSON.stringify(registro));
+        console.log(registro);
+        alert("Datos guardados correctamente.");
+        
+        form.classList.remove('was-validated');
+        if (statusElement) {
+            var status = statusElement.value;
+
+            if (status === "1") {
+                window.location.href = "registroCompradores.html";
+            } else if (status === "2") {
+                window.location.href = "registroartistas.html";
+            } else {
+                console.error("Estado desconocido: " + status);
+            }
+        } else {
+            console.error("No se ha seleccionado ningún estado");
+        }
+    }
+}, false);
