@@ -99,50 +99,61 @@
                     <label for="nombre" class="form-label">Nombre/s</label>
                     <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre"
                         pattern="^[a-zA-ZÀ-ÿ\s]{1,40}$" required>
-
+                        <div class="invalid-feedback">
+                            Puedes usar letras, números, puntos, comas y guiones.
+                        </div>
                     <label for="apaterno" class="form-label">Apellido Paterno</label>
                     <input type="text" class="form-control" id="apaterno" placeholder="Ingrese su Apellido Paterno"
                         pattern="^[a-zA-ZÀ-ÿ\s]{1,40}$" required>
-
+                        <div class="invalid-feedback">
+                            Puedes usar letras, números, puntos, comas y guiones.
+                        </div>
                     <label for="amaterno" class="form-label">Apellido Materno</label>
                     <input type="text" class="form-control" id="amaterno" placeholder="Ingrese su Apellido Materno"
                         pattern="^[a-zA-ZÀ-ÿ\s]{1,40}$" required>
-
+                        <div class="invalid-feedback">
+                            Puedes usar letras, números, puntos, comas y guiones.
+                        </div>
 
                     <label class="form-label">¿Comprador o Artistx?</label>
-
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status" id="comprador" value="Comprador">
-                        <label class="form-check-label" for="exampleRadios2">
+                        <input class="form-check-input" type="radio" name="status" id="comprador" value="1" required>
+                        <label class="form-check-label" for="comprador">
                             Comprador
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status" id="artistx" value="Comprador">
-                        <label class="form-check-label" for="exampleRadios2">
+                        <input class="form-check-input" type="radio" name="status" id="artistx" value="2" required>
+                        <label class="form-check-label" for="artistx">
                             Artista
                         </label>
                     </div>
+                    <div class="invalid-feedback">
+                        Debes seleccionar una opción.
+                    </div>                    
 
                     <label for="correo" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo Electrónico"
-                        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
-
+                    <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo Electrónico" required>
+                        <div class="invalid-feedback">
+                            Puedes usar letras, números, puntos, comas y guiones.
+                        </div>
                     <label for="telefono" class="form-label">Teléfono</label>
                     <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su Número Telefónico"
                         minlength="10" maxlength="10" required>
-
+                        <div class="invalid-feedback">
+                            Puedes usar letras, números, puntos, comas y guiones.
+                        </div>
                     <label for="contraseña" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="contraseña" placeholder="Ingrese una contraseña"
-                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$"
-                        required>
-
+                    <input type="password" class="form-control" id="contraseña" placeholder="Ingrese una contraseña" required>
+                        <div class="invalid-feedback">
+                            Contraseña inválida.
+                        </div>
                     <label for="reincontraseña" class="form-label">Reingrese su contraseña</label>
                     <input type="password" class="form-control" id="reincontraseña"
-                        placeholder="Reingrese su contraseña"
-                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$"
-                        required>
-
+                        placeholder="Reingrese su contraseña" required>
+                        <div class="invalid-feedback">
+                            Puedes usar letras, números, puntos, comas y guiones.
+                        </div>
                     <div class="row"><br><br>
                         <div class="form-check"><br><br>
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
