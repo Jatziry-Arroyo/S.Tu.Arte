@@ -1,59 +1,72 @@
-// Añade un event listener al formulario de login para el evento 'submit'
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+const loginForm = document.getElementById('loginForm');
+const emailInput = document.getElementById('userEmail');
+const passwordInput = document.getElementById('password');
+const alertContainer = document.getElementById('alert-container');
+
+loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
+    event.stopPropagation();
 
     // Limpia las alertas anteriores
-    document.getElementById('alert-container').innerHTML = '';
+    alertContainer.innerHTML = '';
 
-    // Obtiene los valores de los campos del formulario
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    // Array para almacenar los mensajes de error
-    let errors = [];
+    // Agregar la clase de validación de Bootstrap
+    loginForm.classList.add('was-validated');
 
     // Validación del campo de correo electrónico
-    if (!email) {
-        // Añade un mensaje de error si el campo de correo está vacío
-        errors.push('El campo de correo es obligatorio.');
-    } else if (!validateEmail(email)) {
-        // Añade un mensaje de error si el correo no es válido
-        errors.push('El correo no es válido.');
+    if (!emailInput.value) {
+        emailInput.setCustomValidity('El campo de correo es obligatorio.');
+    } else if (!validateEmail(emailInput.value)) {
+        emailInput.setCustomValidity('El correo no es válido.');
+    } else {
+        emailInput.setCustomValidity('');
     }
 
     // Validación del campo de contraseña
-    if (!password) {
-        // Añade un mensaje de error si el campo de contraseña está vacío
-        errors.push('El campo de contraseña es obligatorio.');
+    if (!passwordInput.value) {
+        passwordInput.setCustomValidity('El campo de contraseña es obligatorio.');
+    } else {
+        passwordInput.setCustomValidity('');
     }
 
     // Mostrar los errores, si los hay
-    if (errors.length > 0) {
-        // Crea el HTML para la alerta de errores
-        let alertHtml = '<div class="alert alert-danger" role="alert"><ul>';
-        errors.forEach(function(error) {
-            // Añade cada mensaje de error a la lista de la alerta
-            alertHtml += `<li>${error}</li>`;
-        });
-        alertHtml += '</ul></div>';
-
-        // Inserta la alerta en el contenedor de alertas
-        document.getElementById('alert-container').innerHTML = alertHtml;
+    if (!loginForm.checkValidity()) {
+        loginForm.reportValidity();
     } else {
-        // Se enviaría el formulario para inicar sesión. 
+
+        // Crear objeto usuario
         let usuario = {
-            'useremail': email,
-            'userpassword': password
-        }
-        console.log(usuario);
+            'useremail': emailInput.value,
+            'userpassword': passwordInput.value
+        };
+
+        // Guardar objeto usuario en localStorage como JSON
         localStorage.setItem("Usuario", JSON.stringify(usuario));
+
+        // Aquí se enviaría el formulario para iniciar sesión.
+        console.log('Formulario válido. Se enviaría el formulario.');
+        console.log(usuario);
+
+        // Reinicia el formulario
+        loginForm.reset();
+        loginForm.classList.remove('was-validated');
+
     }
 });
 
-// Función para validar el formato del correo electrónico
 function validateEmail(email) {
     // Expresión regular para validar correos electrónicos
     const re = /^(([^<>()\[\]\.,;:\s@"]+(.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
     // Prueba si el correo cumple con la expresión regular
     return re.test(String(email).toLowerCase());
 }
+
+emailInput.addEventListener('input', () => {
+    emailInput.setCustomValidity('');
+    emailInput.checkValidity();
+});
+
+passwordInput.addEventListener('input', () => {
+    passwordInput.setCustomValidity('');
+    passwordInput.checkValidity();
+});
