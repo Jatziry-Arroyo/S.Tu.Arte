@@ -1,3 +1,10 @@
+let productos = [];
+fetch("../package/products.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    });
 
 let productos = [];
 fetch("../package/products.json")
@@ -50,6 +57,7 @@ function cargarProductos(productosElegidos) {
 function actualizarBotonesAgregar() {
     document.querySelectorAll(".producto-agregar").forEach(boton => {
         boton.addEventListener("click", function () {
+
 
 
             if (localStorage.getItem('productosEnCarrito') == null) {
@@ -118,3 +126,4 @@ function actualizarNumeroCarrito() {
 window.addEventListener('storage', actualizarNumeroCarrito);
 
 actualizarNumeroCarrito();
+

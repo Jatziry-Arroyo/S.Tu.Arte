@@ -10,6 +10,7 @@ const contenedorTotal = document.querySelector("#total");
 let productos = [];
 
 fetch("../package/products.json")
+
     .then(response => {
         if (!response.ok) {
             throw new Error("Error al cargar el archivo JSON");
@@ -30,7 +31,6 @@ function cargarProductosCarrito() {
     contenedorCarritoProductos.classList.remove("disabled");
     contenedorCarritoAcciones.classList.remove("disabled");
     contenedorCarritoComprado.classList.add("disabled");
-
     contenedorCarritoProductos.innerHTML = "";
     let productoId = localStorage.getItem("Producto");
     console.log(productoId);
@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const estado = document.getElementById('estado');
     const name = document.getElementById('name');
     const colonia = document.getElementById('colonia');
-
     
     const correoError = document.getElementById('correoError');
     const direccionError = document.getElementById('direccionError');
@@ -237,3 +236,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 });
+
