@@ -201,6 +201,17 @@ h1 {
     border-color: #B100A8;
 }
 
+#btn-rosa2 {
+    background-color: #B100A8;
+    border-color: #B100A8;
+    color: white;
+}
+
+#btn-rosa2:hover {
+    background-color: #B100A8;
+    border-color: #B100A8;
+}
+
 .text-light:hover {
     color: #B100A8;
 }
@@ -233,4 +244,8 @@ h1 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     text-align: center;
+}
+
+.disabled {
+    display: none;
 }

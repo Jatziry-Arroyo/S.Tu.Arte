@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "mail": "itzia@mail.com",
+        "password": "Itzia123",
+        "type": "comprador"
+    },
+    {
+        "id": 2,
+        "mail": "azu@mail.com",
+        "password": "Azuce123",
+        "type": "artista"
+    }
+]
