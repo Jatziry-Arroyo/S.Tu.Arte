@@ -6,14 +6,6 @@ fetch("../package/products.json")
         cargarProductos(productos);
     });
 
-let productos = [];
-fetch("../package/products.json")
-    .then(response => response.json())
-    .then(data => {
-        productos = data;
-        cargarProductos(productos);
-    });
-
 const contenedorProductos = document.querySelector(".obras-artistas");
 
 function cargarProductos(productosElegidos) {
