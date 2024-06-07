@@ -9,15 +9,6 @@ body {
     width: 100%;
 }
 
-/*#div-nav {
-margin-left: 1%;
-margin-right: 1%;
-/*width: 100%;
-
-justify-content: left;
-text-align: left;
-height: 72px;
-}*/
 #div-nav {
     top: 50%;
 }
@@ -49,7 +40,7 @@ height: 72px;
     opacity: 1;
     color: white;
     font-size: 17px;
-    text-align: center;
+    text-align: left;
 }
 
 #pp {
@@ -79,7 +70,7 @@ a.nav-link:focus {
 }
 
 .img-icon {
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -95,7 +86,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
 }
 
 nav,
@@ -129,6 +121,7 @@ nav {
 
 .navbar-toggler {
     width: auto;
+    margin-left: 0px;
 }
 
 @media (max-width:992px) {
@@ -151,6 +144,30 @@ nav {
     .nav-link {
         text-align: left;
         justify-content: left;
+        padding-left: 15px;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .container-fluid {
+        width: 240px;
+    }
+
+    #div-nav {
+        margin-left: 5%;
+    }
+
+    .nav-link:hover,
+    a.nav-link:hover {
+        color: white;
+        cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
+    }
+
+    .navbar-collapse {
+        height: 480px;
+        background-color: rgba(0, 0, 0, 0.9);
     }
 }
 
@@ -180,35 +197,24 @@ h1 {
     color: white;
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    margin-left: 2%;
+    text-align: center;
 }
 
 /*Estilos de forulario*/
 
-#form-registro-comprador {
-    color: white;
-    width: 100%;
-    border-radius: 1em;
-    width: 90%;
-}
-
 #container-form {
     border: 2px solid white;
     border-radius: 1em;
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 16px;
 }
 
 #datos-contacto {
-    margin-top: 5%;
-    margin-bottom: 2%;
-}
-
-#botones {
-    margin-bottom: 5%;
+    margin-top: 16px;
 }
 
 label,
@@ -225,14 +231,14 @@ h2 {
 input,
 select {
     font: 1em sans-serif;
-    width: 300px;
+    width: 95%;
     box-sizing: border-box;
     border: 1px solid #999;
     padding: 10px;
     border-radius: 1em;
 }
 
-#pais #estado #direccion #fechanacimiento {
+#estado #direccion #fechanacimiento {
     padding: 3px;
     white-space: nowrap;
     color: white;
@@ -247,10 +253,42 @@ button {
     color: white;
     background-color: #B100A8;
     border-radius: 10px;
-    margin-top: 5%;
-    margin-left: 180px;
-    padding: 9px 15px;
+    margin-top: 10px;
+    padding: 6px 12px;
     width: 150px;
+}
+
+#botones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn-return #btn-guardar {
+    margin-left: 0px;
+    padding: 12px;
+}
+
+@media (max-width:992px) {
+    button {
+        font-family: "Poppins", sans-serif;
+        color: white;
+        background-color: #B100A8;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 3px 6px;
+        width: 130px;
+    }
+
+    #botones {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #btn-return #btn-guardar {
+        margin-left: 0px;
+        padding: 12px;
+    }
+
 }
 
 /*Formato errores validación*/
@@ -259,6 +297,3 @@ button {
     text-align: left;
 }
 
-.input-error {
-    border: 5px solid #d38f33;
-}

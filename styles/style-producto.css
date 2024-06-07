@@ -3,6 +3,10 @@ body {
     background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.75));
 }
 
+#body {
+  font-family: 'Poppins', sans-serif;
+}
+
 #nav-fixed{
     position: fixed;
     width:100%;
@@ -77,23 +81,26 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
 #icono-logo {
     height: 52px;
+    padding-bottom: 5px;
 }
 
 .navbar-collapse {
-    text-align: left;
+  text-align: left;
    justify-content: left;
    border: 0;
 }
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
+    /*background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));*/
 }
 
 nav,a,li,ul {
@@ -104,6 +111,7 @@ nav,a,li,ul {
     justify-content: space-between;
     width: 100%;
     height: 72px;
+    /*background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));*/
 }
 
 #btn-menu {
@@ -146,9 +154,14 @@ nav {
         text-align: left;
         justify-content: left;
     }
+    .navbar-collapse{
+      height: 480px;
+      background-color: rgba(0,0,0,0.9);
+      /*background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));*/
+    }
 }
 
-h1{color:white}
+h1{color:white; text-align: center;}
 
 form {
     margin: 0 auto;
@@ -334,13 +347,13 @@ input[type=checkbox] {
 #div-imagen-vacia {
   background-color: white;
   width: 100%;
-  height: 80%;
+  height: 60%;
 }
 
 #subirImagen {
   object-fit: cover;
-  width:100%;
   height:100%;
+  width: 100%;
 }
 
 #boton-form {
