@@ -193,6 +193,53 @@ h1 {
 
 }
 
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-morado {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 155px; 
+    padding: 10px 15px; 
+    width: 150px; 
+}
+
+#btn-morado:hover {
+    background-color: #5a33a7;
+    border-color: #5a33a7;
+}
+
+/* 
+.btn{
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #9d45bc;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 155px; 
+    padding: 10px 15px; 
+    width: 150px; 
+    
+} */
+
+
+
+#carouselExampleSlidesOnly {
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 500px;
+}
+
+#card {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 footer {
     font-family: "Poppins", sans-serif;
     font-style: normal;
