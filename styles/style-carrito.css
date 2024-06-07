@@ -8,15 +8,6 @@ body {
     width:100%;
 }
 
-/*#div-nav {
-margin-left: 1%;
-margin-right: 1%;
-/*width: 100%;
-
-justify-content: left;
-text-align: left;
-height: 72px;
-}*/
 #div-nav {
     top: 50%;
 }
@@ -77,7 +68,7 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -93,7 +84,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
 }
 
 nav,a,li,ul {
@@ -122,29 +114,434 @@ nav {
     position: fixed;
 }
 
-.navbar-toggler{width: auto;}
+.navbar-toggler{
+  width: auto;
+  margin-left: 0px;
+}
 
 @media (max-width:992px) {
-    .nav-item{
-        text-align: left;
-        justify-content: left;
-    }
-    .navbar-nav {
-        text-align: left;
-        padding-right: 25px;
-        justify-content: left;
-    }
-    .icono-nav{
-        text-align: left;
-        justify-content: left;
-    }
-    .nav-link{
-        text-align: left;
-        justify-content: left;
+  .nav-item {
+      text-align: left;
+      justify-content: left;
+  }
+  .navbar-nav {
+      text-align: left;
+      padding-right: 25px;
+      justify-content: left;
+  }
+  .icono-nav{
+      text-align: left;
+      justify-content: left;
+  }
+  .nav-link{
+      text-align: left;
+      justify-content: left;
+  padding-left: 15px;
+  }
+.navbar-collapse{
+  height: 480px;
+  background-color: rgba(0,0,0,0.9);
+}
+.navbar {
+  display: block;
+}
+.container-fluid {
+  width: 240px;
+}
+#div-nav{
+  margin-left: 5%;
+}
+.nav-link:hover, 
+  a.nav-link:hover {
+  color: white;
+  cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
+}
+
+}
+
+
+h1{
+    color:white;
+    font-family: "Poppins", sans-serif;
+    /* margin: 50px;    */
+    text-align: center;
+
+}
+
+h3{
+    color: black;
+}
+
+#telefonoError {
+  color: red;
+}
+
+#correoError {
+  color: red;
+
+}  
+
+#codigoPostalError{
+  color: red;
+
+}
+
+#estadoError{
+  color: red;
+
+}
+
+#direccionError {
+  color: red;
+}
+
+#noExteriorError{
+  color: red;
+}
+
+.formularioInfo{
+  color: white;
+}
+
+#carrito-vacio{
+  color:  white;
+  font-family: "Poppins", sans-serif;
+  /* display: flex; */
+  text-align: center;
+}
+
+#nameError{
+  color: red;
+}
+
+#coloniaError{
+  color: red;
+}
+
+.subtitle-form {
+    color: white;
+}
+
+
+/* ********************CARRITO************************* */
+
+.carrito-producto-imagen{
+    /* width: 100rem; */
+     margin-left: 5%; 
+  }  
+
+.numerito {
+    background-color: white;
+    color: #4b33a8;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carrito-vacio,
+.carrito-comprado {
+    color: white;
+}
+
+
+main {
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.carrito-producto {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: white;
+    /* color: var(--clr-main); */
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+    color: black;
+    border-bottom: 0.5cap solid rgba(211, 143, 51,1);
+    
+}
+
+.carrito-producto-imagen {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto small {
+    font-size: .75rem;
+}
+
+/* .carrito-producto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+} */
+
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.carrito-acciones-vaciar {
+  font-family: "Poppins", sans-serif;;
+    border: 0;
+    background-color: #B100A8;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+.carrito-acciones-vaciar:hover {
+    background-color:  #9d45bc;
+    border-color: #5a33a7;
+}
+
+
+.carrito-acciones-derecha {
+    display: flex;
+}
+
+.carrito-acciones-total {
+    display: flex; 
+    /* background-color: #9d45bc;
+    padding: 0.5rem; */
+    color: white;
+    /* text-transform: uppercase; */
+    text-align: center;
+    /* align-items: center;  */
+    /* justify-content: center; */
+    /* border-bottom: 0.1cap solid rgba(211, 143, 51,1); */
+    padding: 0.2rem;
+    padding-right: 1.5rem;
+    border-radius: 1.5rem;
+    /* text-align: bottom; */
+    /* border-radius: 1rem; */
+    /* gap: 1rem; */
+}
+
+/* .carrito-acciones-comprar {
+    border: 0;
+    background-color: #9d45bc;
+    padding: 0.5rem;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius:0.5rem ;
+    margin-left: 70%;
+    font-family: "Poppins", sans-serif;
+}
+
+.carrito-acciones-comprar:hover {
+  background-color: #5a33a7;
+  border-color: #5a33a7;
+
+} */
+
+#btn-continuar {
+  border: 0;
+    background-color: #B100A8; 
+    padding: 0.5rem;
+    color: white;
+    cursor: pointer;
+    border-radius:0.5rem ;
+    margin-left: 60%;
+    font-family: "Poppins", sans-serif;
+    width: 250px;
+}
+
+
+.disabled {
+    display: none;
+} 
+
+/*** MEDIA QUERIES ***/
+
+@media screen and (max-width: 850px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-h1{color:white}
+@media screen and (max-width: 675px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    main {
+        margin: 1rem;
+        margin-top: 0;
+        padding: 2rem;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .carrito-producto {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: .5rem;
+    }
+
+    .carrito-producto-subtotal {
+        display: none;
+    }
+
+    .carrito-acciones {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    
+
+}
+
+.input-error {
+  border: 5px solid #d38f33;
+}
+
+/* ******************termina carrito******* */
+  
+  /* ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 2em;
+  }
+  
+  label {
+    display: inline-block;
+    width: 90px;
+    text-align: left;
+  } */
+  
+  /* input,
+  textarea {
+    font: 1em sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #999; 
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #000;
+  }
+  
+  textarea {
+    vertical-align: top;
+    height: 5em;
+  }
+   */
+  /* .button {
+    padding-left: 90px;
+  }
+  
+  button {
+
+    margin-left: 0.5em;
+  } */
+
+  h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    float: left;
+    width: 20%;
+    padding: 30px;
+    font-size: 38px;
+  }
+  
+  label{
+    font-family: "Poppins", sans-serif;
+    color:white;
+  }
+
+  input{
+    border-radius: 10px;
+    padding: 20px; 
+    width: 100%;
+    
+  }
+
+  /* #mensaje{
+    padding: 10px;
+  }
+
+
+  #identificacion{
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  #numero{
+    padding: 10px;
+    white-space: nowrap;
+  } */
+
+
+
+  .btn-primary{
+    font-family: "Poppins", sans-serif;
+    color: white; 
+    background-color:  #B100A8; 
+    border-radius: 10px;
+    /* margin-top: 10px;
+    margin-left: 410px;
+    padding: 9px 15px; */
+    width: 150px;
+  }
+
+  .btn-primary:hover{
+    background-color:  #B100A8;
+    /* border-color: #5a33a7; */
+  }  
+
+  span{
+    color: white;
+    font-family: "Poppins", sans-serif;
+     font-weight: 300;
+     font-style: normal;
+    
+  }
+
+  #left h2{
+    padding-top: 30px;
+
+  }
+
+  #left {
+    padding-top: 200px;
+  }
+  
+  @media (max-width:992px){
+    .form {
+        text-align: left;
+        justify-content: left;
+    }
+
+   
+}
 
 footer{
     font-family: "Poppins", sans-serif;
@@ -169,7 +566,12 @@ footer{
     font-size: 50%;
 }
 
-#active-page {
-  border-bottom: 2px solid white;
-  color: white;
+#border-form {
+  border-radius: 25px;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 100px;
+  margin-left: 40px;
+  width: 1450px;
 }
