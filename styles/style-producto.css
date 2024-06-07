@@ -364,3 +364,7 @@ input[type=checkbox] {
 #border-form {
   border-radius: 25px;
 }
+
+.modal-content {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
+}
