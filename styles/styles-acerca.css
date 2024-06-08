@@ -32,29 +32,7 @@ body{
     font-style: normal;
 }
 
-/*
-#card-header-tabs {
-    border-bottom-color: none;
-    color: chartreuse;
-}
 
-.nav-item {
-    color: black;
-
-}
-
-.nav-link active {
-    background-color: #b100a8;
-}
-
-.nav-item:hover {
-    background-color: #b100a8;
-}
-
-.nav-link.active {
-    background-color: #b100a8;
-    color: #d38f33;
-}*/
 
 .biography-container div {
     margin-bottom: 3%;
@@ -111,7 +89,7 @@ body {
 
 #nav-fixed {
     position: fixed;
-    width: 100%;
+    width:100%;
 }
 
 #div-nav {
@@ -161,7 +139,7 @@ body {
 .nav.link:hover,
 a.nav-link:hover {
     color: white;
-    cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
+    cursor: url("../assets/iconamoon--enter-duotone.png"),auto;
 }
 
 a.nav-link:focus {
@@ -175,7 +153,7 @@ a.nav-link:focus {
 }
 
 .img-icon {
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -191,7 +169,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
 }
 
 nav,
@@ -225,30 +204,50 @@ nav {
 
 .navbar-toggler {
     width: auto;
+    margin-left: 0px;
 }
 
 @media (max-width:992px) {
     .nav-item {
-        text-align: left;
-        justify-content: left;
+      text-align: left;
+      justify-content: left;
     }
-
+  
     .navbar-nav {
-        text-align: left;
-        padding-right: 25px;
-        justify-content: left;
+      text-align: left;
+      padding-right: 25px;
+      justify-content: left;
     }
-
-    .icono-nav {
-        text-align: left;
-        justify-content: left;
-    }
-
+    
+     
     .nav-link {
-        text-align: left;
-        justify-content: left;
+      text-align: left;
+      justify-content: left;
+      padding-left: 15px;
     }
-}
+    .navbar-collapse {
+      height: 480px;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .navbar {
+      display: block;
+    }
+  
+    .container-fluid {
+      width: 240px;
+    }
+  
+    #div-nav {
+      margin-left: 5%;
+    }
+  
+    .nav-link:hover,
+    a.nav-link:hover {
+      color: white;
+      cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
+    }
+  
+  }
 
 h1 {
     color: white

@@ -1,53 +1,149 @@
-// Añade un event listener al formulario de login para el evento 'submit'
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+const loginForm = document.getElementById('loginForm');
+const emailInput = document.getElementById('userEmail');
+const passwordInput = document.getElementById('password');
+const alertContainer = document.getElementById('alert-container');
+const btnEnviar =document.getElementById('btn-rosa');
+const btnCerrar =document.getElementById('btn-rosa2');
+
+btnEnviar.addEventListener('click', function (event) {
     event.preventDefault();
+    event.stopPropagation();
 
     // Limpia las alertas anteriores
-    document.getElementById('alert-container').innerHTML = '';
+    alertContainer.innerHTML = '';
 
-    // Obtiene los valores de los campos del formulario
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    // Array para almacenar los mensajes de error
-    let errors = [];
+    // Agregar la clase de validación de Bootstrap
+    loginForm.classList.add('was-validated');
 
     // Validación del campo de correo electrónico
-    if (!email) {
-        // Añade un mensaje de error si el campo de correo está vacío
-        errors.push('El campo de correo es obligatorio.');
-    } else if (!validateEmail(email)) {
-        // Añade un mensaje de error si el correo no es válido
-        errors.push('El correo no es válido.');
+    if (!emailInput.value) {
+        emailInput.setCustomValidity('El campo de correo es obligatorio.');
+    } else if (!validateEmail(emailInput.value)) {
+        emailInput.setCustomValidity('El correo no es válido.');
+    } else {
+        emailInput.setCustomValidity('');
     }
 
     // Validación del campo de contraseña
-    if (!password) {
-        // Añade un mensaje de error si el campo de contraseña está vacío
-        errors.push('El campo de contraseña es obligatorio.');
+    if (!passwordInput.value) {
+        passwordInput.setCustomValidity('El campo de contraseña es obligatorio.');
+    } else {
+        passwordInput.setCustomValidity('');
     }
 
     // Mostrar los errores, si los hay
-    if (errors.length > 0) {
-        // Crea el HTML para la alerta de errores
-        let alertHtml = '<div class="alert alert-danger" role="alert"><ul>';
-        errors.forEach(function(error) {
-            // Añade cada mensaje de error a la lista de la alerta
-            alertHtml += `<li>${error}</li>`;
-        });
-        alertHtml += '</ul></div>';
-
-        // Inserta la alerta en el contenedor de alertas
-        document.getElementById('alert-container').innerHTML = alertHtml;
+    if (!loginForm.checkValidity()) {
+        loginForm.reportValidity();
     } else {
-        // Se enviaría el formulario para inicar sesión. 
+
+       /* // Crear objeto usuario
+        let usuario = {
+            'useremail': emailInput.value,
+            'userpassword': passwordInput.value
+        };
+
+        // Guardar objeto usuario en localStorage como JSON
+        localStorage.setItem("Usuario", JSON.stringify(usuario));
+
+        // Aquí se enviaría el formulario para iniciar sesión.
+        console.log('Formulario válido. Se enviaría el formulario.');
+        console.log(usuario);
+
+        // Reinicia el formulario
+        loginForm.reset();
+        loginForm.classList.remove('was-validated');*/
+        validateUser();
+
     }
 });
 
-// Función para validar el formato del correo electrónico
 function validateEmail(email) {
     // Expresión regular para validar correos electrónicos
     const re = /^(([^<>()\[\]\.,;:\s@"]+(.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
     // Prueba si el correo cumple con la expresión regular
     return re.test(String(email).toLowerCase());
 }
+
+emailInput.addEventListener('input', () => {
+    emailInput.setCustomValidity('');
+    emailInput.checkValidity();
+});
+
+passwordInput.addEventListener('input', () => {
+    passwordInput.setCustomValidity('');
+    passwordInput.checkValidity();
+});
+
+fetch("../package/users.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Error al cargar el archivo JSON");
+        }
+        return response.json();
+    })
+    .then(data => {
+        usuarios = data;
+        //cargarProductosCarrito(productos);
+    })
+    .catch(error => console.error("Error en la solicitud fetch:", error));
+
+
+function validateUser() {
+    let usuarioEncontrado = usuarios.find(usuario => usuario.mail === (emailInput.value));
+    console.log(emailInput.value);
+    if (usuarioEncontrado) {
+        console.log("Existe");
+        //console.log(usuarioEncontrado.mail);
+        if (usuarioEncontrado.password === passwordInput.value) {
+            console.log("Usuario validado");
+            console.log(usuarioEncontrado.type)
+            // Crear objeto usuario
+            /*let usuario = {
+                'useremail': emailInput.value,
+                'userpassword': passwordInput.value
+            };*/
+
+            // Guardar objeto usuario en localStorage como JSON
+            localStorage.setItem("Usuario", usuarioEncontrado.type);
+
+            // Aquí se enviaría el formulario para iniciar sesión.
+            console.log('Formulario válido. Se enviaría el formulario.');
+            //console.log(usuario);
+
+            // Reinicia el formulario
+            loginForm.reset();
+            loginForm.classList.remove('was-validated');
+
+            btnEnviar.classList.add("disabled");
+            btnCerrar.classList.remove("disabled");
+
+        }
+        else {
+            console.log("Contraseña incorrecta");
+            alert("Contraseña incorrecta");
+        }
+    }
+    else {
+        console.log("Ese usuario no existe");
+        alert("Ese correo no está registrado. Por favor verifica tus datos de usuario");
+    }
+}
+
+function enviarCerrar(){
+    
+    if(localStorage.getItem("Usuario")){
+        btnEnviar.classList.add("disabled");
+        btnCerrar.classList.remove("disabled");
+    }
+    else {
+        btnEnviar.classList.remove("disabled");
+            btnCerrar.classList.add("disabled");
+    }
+}
+
+btnCerrar.addEventListener('click', function (event) {
+    localStorage.removeItem("Usuario");
+    enviarCerrar();
+});
+
+window.addEventListener("storage",enviarCerrar());

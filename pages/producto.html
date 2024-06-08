@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/style-producto.css">
 </head>
 
-<body>
+<body id="body">
     <nav id="nav-fixed" class="navbar navbar-expand-lg bg-body-tertiary fixed-container">
         <div id="div-nav" class="container-fluid container">
             <a class="navbar-brand" href="#"></a>
@@ -29,18 +29,23 @@
                     </li>
                     <li class="nav-item">
                         <div class="icono-nav">
-                            <a class="nav-link" aria-current="page" href="./pages/acerca.html"><img class="img-icon"
+                            <a class="nav-link" aria-current="page" href="./acerca.html"><img class="img-icon"
                                     src="../assets/People.png" alt="Acerca de nosotras"><br>Acerca de nosotras</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <div class="icono-nav">
-                            <a class="nav-link" aria-current="page" href="./pages/compradores.html"><img
-                                    class="img-icon" src="../assets/LandSales.png" alt="Nuevos compradores"><br>Nuevos
-                                compradores</a>
+                            <a class="nav-link" aria-current="page" href="./compradores.html"><img
+                                    class="img-icon" src="../assets/LandSales.png" alt="Nuevos compradores"><br>Nuevos compradores</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown icono-nav">
+                    <li class="nav-item">
+                        <div class="icono-nav">
+                            <a class="nav-link" aria-current="page" href="./talento.html"><img
+                                    class="img-icon" src="../assets/Honesty.png" alt="Nuevos compradores"><br>Talento Mexa</a>
+                        </div>
+                    </li>
+                    <!--<li class="nav-item dropdown icono-nav">
                         <a class="nav-link dropdown-toggle" href="./pages/talento.html" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false"><img class="img-icon"
                                 src="../assets/Honesty.png" alt="Talento Mexa"><br>
@@ -49,14 +54,14 @@
                         <div id="div-coll">
                             <ul class="dropdown-menu  nav-coll">
                                 <div>
-                                    <li><a id="pp" class="dropdown-item" href="./pages/talento.html">Primer año</a></li>
+                                    <li><a id="pp" class="dropdown-item" href="./talento.html">Primer año</a></li>
                                     <li><a class="dropdown-item" href="./pages/talento.html">Segundo año</a></li>
                                     <li><a class="dropdown-item" href="./pages/talento.html">Tercer año</a></li>
                                     <li><a class="dropdown-item" href="./pages/talento.html">Cuarto año</a></li>
                                 </div>
                             </ul>
                         </div>
-                    </li>
+                    </li>-->
 
                     <li class="nav-item dropdown icono-nav">
                         <a class="nav-link dropdown-toggle" href="./pages/catalogo.html" role="button"
@@ -65,24 +70,24 @@
                             Catálogo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Grabado</a></li>
-                            <li><a class="dropdown-item" href="#">Escultura</a></li>
-                            <li><a class="dropdown-item" href="#">Óleo</a></li>
-                            <li><a class="dropdown-item" href="#">Collage</a></li>
-                            <li><a class="dropdown-item" href="#">Acuarela</a></li>
-                            <li><a class="dropdown-item" href="#">Fotografía</a></li>
-                            <li><a class="dropdown-item" href="#">Acrílico</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Grabado</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Escultura</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Óleo</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Collage</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Acuarela</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Fotografía</a></li>
+                            <li><a class="dropdown-item" href="./catalogo.html">Acrílico</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <div class="icono-nav">
-                            <a class="nav-link" aria-current="page" href="./pages/login.html"><img class="img-icon"
+                            <a class="nav-link" aria-current="page" href="./login.html"><img class="img-icon"
                                     src="../assets/User.png" alt="Log in"><br>Login</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <div class="icono-nav">
-                            <a class="nav-link" aria-current="page" href="./pages/carrito.html"><img class="img-icon"
+                            <a class="nav-link" aria-current="page" href="./carrito.html"><img class="img-icon"
                                     src="../assets/carrito-icon.png" alt="Carrito de compras"><br>Carrito</a>
                         </div>
                     </li>
@@ -128,7 +133,7 @@
                     <div class="invalid-feedback">Selecciona una opción</div>
 
                     <label for="materiales" class="form-label">Materiales</label>
-                    <textarea class="form-control" id="materiales" maxlength="120"
+                    <textarea class="form-control" id="materiales" maxlength="100"
                         placeholder="Materiales utilizados en la obra" required></textarea>
                     <div class="invalid-feedback">Ingresa un texto válido (letras, números, comas y puntos).</div>
 
@@ -138,7 +143,7 @@
                         <div class="col-sm-8">
                             <div id="div-precio" class="input-group">
                                 <input type="number" class="form-control" placeholder="Ancho en mm" id="ancho" required>
-                                <span class="input-group-text">mm</span>
+                                <span class="input-group-text">cm</span>
                                 <div class="invalid-feedback">Ingresa un ancho válido (número entero).</div>
                             </div>
 
@@ -149,7 +154,7 @@
                             <div id="div-precio" class="input-group">
                                 <input type="number" class="form-control" placeholder="Altura en mm" id="altura"
                                     required>
-                                <span class="input-group-text">mm</span>
+                                <span class="input-group-text">cm</span>
                                 <div class="invalid-feedback">Ingresa una altura válida (número entero).</div>
                             </div>
                         </div>
@@ -159,7 +164,7 @@
                             <div id="div-precio" class="input-group">
                                 <input type="number" class="form-control" placeholder="Profundidad en mm"
                                     id="profundidad" required>
-                                <span class="input-group-text">mm</span>
+                                <span class="input-group-text">cm</span>
                                 <div class="invalid-feedback">Ingresa una profundidad válida (número entero).</div>
                             </div>
                         </div>
@@ -226,11 +231,36 @@
                         Descubre y apoya el talento de las, los y les artistas universitaries desde nuestra plataforma.
                     </p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <!--<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-white">Términos y Condiciones</h5>
                     <p id="footerTC">
                         <a href="#" class="text-light" style="text-decoration:none">Consulta la política de Términos y
                             Condiciones</a>
+                    </p>
+                </div>-->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-white">Términos y Condiciones</h5>
+                    <p id="footerTC">
+                        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-light"> Consulta la política de Términos y Condiciones</a>
+                    <div class="modal modal-lg fade" id="staticBackdrop" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Términos y condiciones</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe src="../assets/TerminosCondiciones.pdf" width="99%"
+                                        height="500px"></iframe>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </p>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
