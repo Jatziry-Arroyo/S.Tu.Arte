@@ -78,7 +78,7 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -94,7 +94,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+    padding-top: 5px;
 }
 
 nav,a,li,ul {
@@ -146,10 +147,37 @@ nav {
     .nav-link{
         text-align: left;
         justify-content: left;
+        padding-left: 15px;
+    }
+
+    .navbar-collapse{
+        height: 480px;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .navbar{
+        display: block;
+    }
+
+    .container-fluid{
+        width: 240px;
+    }
+
+    #div-nav{
+        margin-left: 5%;
+    }
+
+    .nav-link:hover,
+    a.nav-link:hover{
+        color: white;
+        cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
     }
 }
 
-h1{color:white}
+h1{
+  color:white;
+  text-align: center;
+}
 
 form {
     margin: 0 auto;
@@ -214,6 +242,11 @@ form {
   }
   
   label{
+    font-family: "Poppins", sans-serif;
+    color:white;
+  }
+
+  p{
     font-family: "Poppins", sans-serif;
     color:white;
   }
