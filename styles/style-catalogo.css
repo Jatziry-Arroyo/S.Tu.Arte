@@ -151,10 +151,6 @@ nav {
 	.navbar-collapse{
 		height: 480px;
 		background-color: rgba(0,0,0,0.9);
-<<<<<<< HEAD
-=======
-
->>>>>>> 1ad57811c1f8d2db03ded1f60269614ee0b35117
 	}
 	.navbar {
 		display: block;
@@ -165,10 +161,6 @@ nav {
 	#div-nav{
 		margin-left: 5%;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 1ad57811c1f8d2db03ded1f60269614ee0b35117
 	.nav-link:hover, 
     a.nav-link:hover {
 		color: white;
@@ -290,7 +282,6 @@ section {
   text-align: center;
   color: rgb(255, 237, 237);
   
-
 }
 .card-artist {
   text-align: center;
@@ -330,7 +321,7 @@ button {
 .product-card:hover .product-card__btn.cart {
 	top: calc(1rem + 50px);
 }
-  
+
 [data-tooltip]::before {
 	content: attr(data-tooltip);
 	position: absolute;
@@ -350,13 +341,13 @@ button {
 	opacity: 1;
 }  
 
+
 .numerito {
     background-color: white;
     color: #4b33a8;
     padding: .15rem .25rem;
     border-radius: .25rem;
 }
-
 
 /**termina estilo card*/
 
@@ -400,4 +391,11 @@ footer{
 .boton-carrito.active .numerito {
     background-color: var(--clr-main);
     color: var(--clr-white);
+}
+
+.numerito {
+    background-color: white;
+    color: #4b33a8;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
 }
