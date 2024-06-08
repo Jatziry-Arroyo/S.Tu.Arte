@@ -109,6 +109,7 @@ function actualizarBotonesAgregar() {
     });
 }
 
+
 function actualizarNumeroCarrito() {
     const productosEnCarrito = localStorage.getItem("productosEnCarrito");
     const contenedorNumCarrito = document.querySelector("#numerito");

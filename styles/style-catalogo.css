@@ -133,7 +133,7 @@ nav {
     .nav-item {
         text-align: left;
         justify-content: left;
-    }
+    }*/
     .navbar-nav {
         text-align: left;
         padding-right: 25px;
@@ -151,6 +151,7 @@ nav {
 	.navbar-collapse{
 		height: 480px;
 		background-color: rgba(0,0,0,0.9);
+
 	}
 	.navbar {
 		display: block;
@@ -161,6 +162,7 @@ nav {
 	#div-nav{
 		margin-left: 5%;
 	}
+
 	.nav-link:hover, 
     a.nav-link:hover {
 		color: white;
@@ -282,6 +284,7 @@ section {
   text-align: center;
   color: rgb(255, 237, 237);
   
+
 }
 .card-artist {
   text-align: center;
@@ -321,7 +324,7 @@ button {
 .product-card:hover .product-card__btn.cart {
 	top: calc(1rem + 50px);
 }
-
+  
 [data-tooltip]::before {
 	content: attr(data-tooltip);
 	position: absolute;
@@ -341,13 +344,13 @@ button {
 	opacity: 1;
 }  
 
-
 .numerito {
     background-color: white;
     color: #4b33a8;
     padding: .15rem .25rem;
     border-radius: .25rem;
 }
+
 
 /**termina estilo card*/
 
