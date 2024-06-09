@@ -178,6 +178,7 @@ h1 {
   font-family: "Poppins", sans-serif;
   /* margin: 50px;    */
   text-align: center;
+  width: 90%;
 
 }
 
@@ -474,7 +475,27 @@ main {
 
     margin-left: 0.5em;
   } */
+#info-envio {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 
+}
+
+#contenido-formulario {
+  padding: 30px;
+}
+
+#border-form {
+  border: 2px solid white;
+  border-radius: 1em;
+  /*padding: 20px;*/
+  width: 90%;
+
+}
+
+/*
 h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -484,6 +505,10 @@ h2 {
   width: 20%;
   padding: 30px;
   font-size: 38px;
+}
+*/
+#h3-direccion {
+  margin-top: 15px;
 }
 
 label {
@@ -497,22 +522,6 @@ input {
   width: 100%;
 
 }
-
-/* #mensaje{
-    padding: 10px;
-  }
-
-
-  #identificacion{
-    padding: 10px;
-    white-space: nowrap;
-  }
-
-  #numero{
-    padding: 10px;
-    white-space: nowrap;
-  } */
-
 
 
 .btn-primary {
@@ -539,22 +548,35 @@ span {
 
 }
 
-#left h2 {
+/*#left h2 {
   padding-top: 30px;
 
 }
 
 #left {
   padding-top: 200px;
-}
+}*/
 
 @media (max-width:992px) {
-  .form {
-    text-align: left;
-    justify-content: left;
+  #info-envio {
+    width: 98%;
   }
 
+  #form-compradores {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
 
+  #contenido-formulario {
+    width: 95%;
+    padding: 16px;
+  }
+
+  h3 {
+    margin-top: 8px;
+  }
 }
 
 footer {
@@ -584,14 +606,4 @@ footer {
 
 #footerCopyright {
   font-size: 50%;
-}
-
-#border-form {
-  border-radius: 25px;
-  border: 2px solid white;
-  border-radius: 15px;
-  padding: 20px;
-  margin-top: 100px;
-  margin-left: 40px;
-  width: 90%;
 }
