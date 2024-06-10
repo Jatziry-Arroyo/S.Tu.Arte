@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
@@ -38,7 +38,6 @@ body {
 .dropdown-item {
   color: white;
   opacity: 1;
-  color: white;
   font-size: 17px;
   text-align: left;
 }
@@ -113,7 +112,6 @@ nav {
   z-index: 5;
 }
 
-
 .navbar-brand {
   text-align: left;
   justify-content: left;
@@ -170,7 +168,6 @@ nav {
     height: 480px;
     background-color: rgba(0, 0, 0, 0.9);
   }
-
 }
 
 /*Estilos formulario*/
@@ -209,7 +206,11 @@ textarea {
   height: 5em;
 }
 
-#fullname #user-email #message #options #cellphone {
+#fullname,
+#user-email,
+#message,
+#options,
+#cellphone {
   padding: 10px;
   white-space: nowrap;
 }
@@ -246,11 +247,9 @@ button {
   text-align: center;
 }
 
-
 h2 {
   font-size: 40px;
   margin-top: 90px;
-
 }
 
 h4 {
@@ -262,7 +261,6 @@ h6 {
   font-size: 20px;
   vertical-align: text-bottom;
 }
-
 
 @media (max-width:992px) {
   #contactanos-form {
@@ -300,4 +298,15 @@ footer {
 #active-page {
   border-bottom: 2px solid white;
   color: white;
+}
+
+/* Estilo para campos user-invalid */
+input:user-invalid,
+textarea:user-invalid {
+  outline: 5px #d38f33 solid;
+}
+
+/* Si usan select, agregar select:user-invalid también */
+select:user-invalid {
+  outline: 5px #d38f33 solid;
 }

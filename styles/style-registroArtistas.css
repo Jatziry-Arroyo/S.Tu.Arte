@@ -355,3 +355,8 @@ input[type=checkbox] {
     color: white;
     font-size: 2rem;
 }
+
+input:user-invalid,
+textarea:user-invalid {
+    outline: 5px #d38f33 solid;
+}
