@@ -18,17 +18,22 @@ btnEnviar.addEventListener('click', function (event) {
     // Validación del campo de correo electrónico
     if (!emailInput.value) {
         emailInput.setCustomValidity('El campo de correo es obligatorio.');
+        emailInput.classList.add("input-error");
     } else if (!validateEmail(emailInput.value)) {
         emailInput.setCustomValidity('El correo no es válido.');
+        emailInput.classList.add("input-error");
     } else {
         emailInput.setCustomValidity('');
+        emailInput.classList.remove("input-error");
     }
 
     // Validación del campo de contraseña
     if (!passwordInput.value) {
         passwordInput.setCustomValidity('El campo de contraseña es obligatorio.');
+        passwordInput.classList.add("input-error");
     } else {
         passwordInput.setCustomValidity('');
+        passwordInput.classList.remove("input-error");
     }
 
     // Mostrar los errores, si los hay
