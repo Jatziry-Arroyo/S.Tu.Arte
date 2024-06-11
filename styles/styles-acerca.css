@@ -567,3 +567,10 @@ h5 {
     line-height: 1em;
 
 }*/
+
+.numerito {
+    background-color: white;
+    color: #4b33a8;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+  }
