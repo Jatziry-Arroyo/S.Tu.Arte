@@ -488,3 +488,10 @@ h2 {
     width: 500px;
     object-fit: contain;
 }
+
+.numerito {
+    background-color: white;
+    color: #4b33a8;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+  }
