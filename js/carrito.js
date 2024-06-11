@@ -40,6 +40,7 @@ function cargarProductosCarrito() {
         console.log("Producto encontrado:", productoEncontrado);
     } else {
         console.log("Producto no encontrado");
+        actualizarNumeroCarrito();
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
         contenedorCarritoAcciones.classList.add("disabled");
@@ -89,7 +90,7 @@ function vaciarCarrito() {
     }).then((result) => {
         if (result.isConfirmed) {
             localStorage.removeItem('Producto');
-            localStorage.removeItem('productosEnCarrito');
+            localStorage.setItem('productosEnCarrito', 0);
             cargarProductosCarrito();
         }
     })

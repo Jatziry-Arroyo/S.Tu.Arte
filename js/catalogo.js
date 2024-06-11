@@ -1,5 +1,5 @@
 let productos = [];
-fetch("../package/products.json")
+fetch("../package/products2.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
@@ -14,7 +14,7 @@ function cargarProductos(productosElegidos) {
     productosElegidos.forEach(producto => {
         const div = document.createElement("div");
         div.classList.add("producto");
-
+        if (producto.tecnica==localStorage.getItem('Tecnica')){
         div.innerHTML = `
             <div class="product-card h-100" style="width: 18rem;" data-product-id="${producto.id}">
                 <div class="product-card__container">
@@ -42,7 +42,7 @@ function cargarProductos(productosElegidos) {
                </div>
           </div>
         `;
-        contenedorProductos.append(div);
+        contenedorProductos.append(div);}
     });
     actualizarBotonesAgregar();
 }
@@ -51,9 +51,7 @@ function actualizarBotonesAgregar() {
     document.querySelectorAll(".producto-agregar").forEach(boton => {
         boton.addEventListener("click", function () {
 
-
-
-            if (localStorage.getItem('productosEnCarrito') == null) {
+            if (localStorage.getItem('productosEnCarrito') == 0 || localStorage.getItem('productosEnCarrito') == null) {
                 console.log("Disponible")
 
                 const productCard = this.closest('.product-card');
@@ -121,3 +119,18 @@ window.addEventListener('storage', actualizarNumeroCarrito);
 
 actualizarNumeroCarrito();
 
+// Guardando la tècnica para filtrar
+const pageGrabado = document.getElementById('pageGrabado');
+pageGrabado.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Grabado')});
+const pageEscultura = document.getElementById('pageEscultura');
+pageEscultura.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Escultura')});
+const pageOleo = document.getElementById('pageOleo');
+pageOleo.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Óleo')});
+const pageCollage = document.getElementById('pageCollage');
+pageCollage.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Collage')});
+const pageAcuarela = document.getElementById('pageAcuarela');
+pageAcuarela.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acuarela')});
+const pageFotografia = document.getElementById('pageFotografia');
+pageFotografia.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Fotografía')});
+const pageAcrilico = document.getElementById('pageAcrilico');
+pageAcrilico.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acrílico')});
