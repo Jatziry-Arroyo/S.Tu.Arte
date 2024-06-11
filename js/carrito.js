@@ -24,7 +24,7 @@ fetch("../package/products.json")
     .catch(error => console.error("Error en la solicitud fetch:", error));
 
 function cargarProductosCarrito() {
-    
+
     //if (productosEnCarrito != null) {
     //console.log("HOLA");
     contenedorCarritoVacio.classList.add("disabled");
@@ -36,16 +36,16 @@ function cargarProductosCarrito() {
     console.log(productoId);
     let productoEncontrado = productos.find(producto => producto.id === parseInt(productoId));
     //console.log(productoEncontrado);
-if (productoEncontrado) {
-    console.log("Producto encontrado:", productoEncontrado);
-} else {
-    console.log("Producto no encontrado");
-    contenedorCarritoVacio.classList.remove("disabled");
+    if (productoEncontrado) {
+        console.log("Producto encontrado:", productoEncontrado);
+    } else {
+        console.log("Producto no encontrado");
+        contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
         contenedorCarritoAcciones.classList.add("disabled");
         contenedorCarritoComprado.classList.add("disabled");
-}
-  
+    }
+
 
     const div = document.createElement("div");
     div.classList.add("carrito-producto");
@@ -67,10 +67,10 @@ if (productoEncontrado) {
             `;
 
     contenedorCarritoProductos.append(div);
-    
+
     actualizarTotal(productoEncontrado.price);
 
-    }
+}
 
 
 botonVaciar.addEventListener("click", vaciarCarrito);
@@ -85,24 +85,24 @@ function vaciarCarrito() {
         focusConfirm: false,
         confirmButtonText: 'Sí',
         cancelButtonText: 'No',
-        
+
     }).then((result) => {
         if (result.isConfirmed) {
             localStorage.removeItem('Producto');
-    localStorage.removeItem('productosEnCarrito');
-    cargarProductosCarrito();
+            localStorage.removeItem('productosEnCarrito');
+            cargarProductosCarrito();
         }
     })
-    
+
     actualizarNumeroCarrito();
-    
+
 }
 
 
 function actualizarTotal(price) {
     console.log(price);
     const numericPrice = parseFloat(price.replace(/[^0-9.-]+/g, ""));
-    const totalCalculado = numericPrice+100;
+    const totalCalculado = numericPrice + 100;
     //const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.price * producto.cantidad), 0);
     total.innerText = `$${totalCalculado}`;
 }
@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const codigoPostal = document.getElementById('codigoPostal');
     const telefono = document.getElementById('telefono');
     const estado = document.getElementById('estado');
-    const name = document.getElementById('name');
+    const name = document.getElementById('user-name');
     const colonia = document.getElementById('colonia');
-    
+
     const correoError = document.getElementById('correoError');
     const direccionError = document.getElementById('direccionError');
     const noExteriorError = document.getElementById('noExteriorError');
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         let valid = true;
 
-        
+
         // Validación de correo electrónico
         if (!correo.checkValidity()) {
             valid = false;
@@ -152,8 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
             correo.classList.remove('input-error');
         }
 
-          // Validación de nombre
-          if (name.value.trim() === '') {
+        // Validación de nombre
+        if (name.value.trim() === '') {
             valid = false;
             nameError.textContent = 'Por favor, ingrese su nombre.';
             name.classList.add('input-error');
@@ -224,15 +224,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!valid) {
             event.preventDefault();
-        // } else {
-        //     window.location= '../pages/metodo.html';
+            // } else {
+            //     window.location= '../pages/metodo.html';
 
         }
-//         if (!form.checkValidity()) {
-//             event.preventDefault();
-//         } else {
-//             window.location.href = 'https://www.youtube.com/';
-//             }
+        //         if (!form.checkValidity()) {
+        //             event.preventDefault();
+        //         } else {
+        //             window.location.href = 'https://www.youtube.com/';
+        //             }
 
     });
 });

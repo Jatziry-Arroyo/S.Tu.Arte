@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
     font-family: stuarte-font;
     src: url("../assets/porter_sans_block/porter-sans-inline-block.ttf");
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -190,7 +191,6 @@ h3 {
     font-style: normal;
 }  
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
@@ -198,7 +198,7 @@ body {
 
 #nav-fixed {
     position: fixed;
-    width:100%;
+    width: 100%;
 }
 
 #div-nav {
@@ -248,7 +248,7 @@ body {
 .nav.link:hover,
 a.nav-link:hover {
     color: white;
-    cursor: url("../assets/iconamoon--enter-duotone.png"),auto;
+    cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
 }
 
 a.nav-link:focus {
@@ -318,45 +318,47 @@ nav {
 
 @media (max-width:992px) {
     .nav-item {
-      text-align: left;
-      justify-content: left;
+        text-align: left;
+        justify-content: left;
     }
-  
+
     .navbar-nav {
-      text-align: left;
-      padding-right: 25px;
-      justify-content: left;
+        text-align: left;
+        padding-right: 25px;
+        justify-content: left;
     }
-    
-     
+
+
     .nav-link {
-      text-align: left;
-      justify-content: left;
-      padding-left: 15px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 15px;
     }
+
     .navbar-collapse {
-      height: 480px;
-      background-color: rgba(0, 0, 0, 0.9);
+        height: 480px;
+        background-color: rgba(0, 0, 0, 0.9);
     }
+
     .navbar {
-      display: block;
+        display: block;
     }
-  
+
     .container-fluid {
-      width: 240px;
+        width: 240px;
     }
-  
+
     #div-nav {
-      margin-left: 5%;
+        margin-left: 5%;
     }
-  
+
     .nav-link:hover,
     a.nav-link:hover {
-      color: white;
-      cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
+        color: white;
+        cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
     }
-  
-  }
+
+}
 
 h1 {
     color: white
@@ -401,3 +403,167 @@ footer {
     border-bottom: 2px solid white;
     color: white;
 }
+
+h5 {
+    margin-bottom: 100px;
+}
+
+#contenedor-biografias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.square {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square span {
+    position: absolute;
+    inset: 0;
+    border: 2px solid red;
+    opacity: 0.5;
+}
+
+.square span:nth-child(1) {
+    border-radius: 32% 10% 10% 30% / 40% 21% 34% 10%;
+    animation: animateSquare 6s linear infinite;
+}
+
+.square span:nth-child(2) {
+    border-radius: 9% 38% 33% 30% / 23% 21% 34% 32%;
+    animation: animateSquare 4s linear infinite;
+}
+
+.square span:nth-child(3) {
+    border-radius: 30% 28% 12% 29% / 16% 6% 31% 32%;
+    animation: animateSquare2 10s linear infinite;
+}
+
+@keyframes animateSquare {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animateSquare2 {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon .imgBx {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0 0 0 4px #fff;
+    opacity: 0.5;
+}
+
+.icon .imgBx.active {
+    opacity: 1;
+    scale: 1.2;
+    margin: 0, 10px;
+    box-shadow: 0 0 0 4px #fff;
+}
+
+.icon .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contentBx {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.contentBx.active {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+
+.contentBx .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    width: 600px;
+}
+
+.contentBx .card .imgBx {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.contentBx .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contentBx .card .textBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom {
+    margin-top: 150px;
+}
+
+/*
+.contentBx .card .textBx p {
+    position: relative;
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1em;
+
+}*/
