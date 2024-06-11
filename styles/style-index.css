@@ -16,6 +16,7 @@ overflow-x: hidden;
     z-index: 5;
 }
 
+
 /*#div-nav {
 margin-left: 1%;
 margin-right: 1%;
@@ -189,55 +190,6 @@ nav {
 h1 {
     color: white;
 
-
-
-}
-
-.buttons{
-    display: flex;
-    flex-direction: column;
-}
-
-#btn-morado {
-    background-color: #6f42c1;
-    border-color: #6f42c1;
-    color: white;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 155px; 
-    padding: 10px 15px; 
-    width: 150px; 
-}
-
-#btn-morado:hover {
-    background-color: #5a33a7;
-    border-color: #5a33a7;
-}
-
-/* 
-.btn{
-    font-family: "Poppins", sans-serif;
-    color: white;
-    background-color: #9d45bc;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 155px; 
-    padding: 10px 15px; 
-    width: 150px; 
-    
-} */
-
-
-
-#carouselExampleSlidesOnly {
-    margin-left: 100px;
-    margin-right: 100px;
-    width: 500px;
-}
-
-#card {
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 footer {
@@ -324,7 +276,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 10%;
-    margin-top: 4%;
+    margin-top: 35%;
     z-index: 5;
 }
 
@@ -355,6 +307,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 5;
+    margin-top: auto;
 }
 
 .bar-bg {
@@ -386,7 +339,6 @@ body {
 }
 
 
-
 .modal-content {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
 }
@@ -399,13 +351,14 @@ body {
     justify-content: flex;
     z-index: 0;
     width: 100%;
-    height: 200vh;
+    height: 100vh;
     flex-direction: column;
-    top: 50%;
+    top: 0%;
     bottom: 0;
     left: 0;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 
 .container1 span{
@@ -419,7 +372,7 @@ body {
     border-radius: 5px;
     z-index: 1;
     width: 45px;
-    height: 45px;;
+    height: 45px;
 }
 .container1 .circle{
     border-radius: 50%;
@@ -437,125 +390,20 @@ body {
     gap: 20px; 
 }
 
-/*Aqui empiezan los atributos del carrusel*/
-
-@media (min-width: 992px) {
-    #carouselExampleSlidesOnly {
-       margin-top: 150px; 
-    }
- 
-    .row {
-       margin-top: 150px; 
-    }
- }
-
-#carouselExampleSlidesOnly {
-   
-    margin: 0 auto;
-    width: 80%;
-    max-height: 100%;
-    max-width: 800px;
-    z-index: 5;
-    display: flex;
-    background-position: center;
-   
-}
-.carousel-inner img {
-    width: 100%;  
-    height: auto;
-}
-.row{
-    
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    margin: 50px auto;
-    bottom: unset;
-    
-    
-}
-.carousel-item img {
-    width: 100%;
-    height: auto;
-  }
-  @media (min-width: 992px) {
-    .carousel-item img {
-        width: 00%; /* Puedes ajustar este valor según tus necesidades */
-        margin-left: 10%; /* Esto centra la imagen en la pantalla */
-    }
-}
-
- @media (max-width: 768px) {
-    #carouselExampleSlidesOnly {
-      margin-top: 20px;
-    }
-  }
-  .carousel-container, .card-container {
-    flex: 1;
-    max-width: 600px;  
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-#card {
-    margin-top: 20px 100px;
-    margin-left: 100px;
-    margin-right: 100px;
-    display: flex;
-    z-index: 10;
-    justify-content: center;
-    max-width: 300px;  
-    text-align: center;
-}
-.carousel-card{
-    text-align: center;
-}
-.card-text {
-    font-size: 1.2rem; 
-}
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    
-}
-
-#btn-morado {
-    background-color: #6f42c1;
-    border-color: #6f42c1;
-    color: white;
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 10px 15px; 
-    width: 150px;
-    z-index: 5; 
-    text-align: center;
-}
-
-#btn-morado:hover {
-    background-color: #5a33a7;
-    border-color: #5a33a7;
-}
-
 /*Letras de Stuart*/
 .stuart{
-    padding-right: 400px;
-    padding-top: 200px;
+    padding-right: 800px;
+    padding-top: 100px;
     z-index: 10;
     position: absolute;
-
     top:0;
-
 }
 
 .stuart h1{
     margin: 20px;
     padding: 0px;
     color: aliceblue;
-    font-size: 8rem;
+    font-size: 7rem;
     font-family: stuarte-font;
     src: url("../assets/porter_sans_block/porter-sans-inline-block.ttf");
 }
@@ -576,5 +424,67 @@ body {
     .stuart h1 {
         font-size: 5rem;  
     }
+}
 
+/*Carrusel*/
+
+.movies {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0 150px 0;
+    box-sizing: border-box;
+    justify-content: center;
+    place-items: center;
+}
+.swiper{
+    width: 50%;
+    margin: 0 auto;
+}
+.swiper-slide{
+    background-position: center;
+    background-size: contain;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display:block;
+    width: 85%;
+    margin: 0 auto;
+}
+
+h2 {
+    color: aliceblue;
+    font-size: 30px;
+    margin-left: 10%;
+    margin-bottom: 100px;
+    justify-content: center;
+    margin-top: 500px;
+    place-items: center;
+    text-align: center;
+}
+
+.carousel-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box; 
+}
+.mySwiper {
+    width: 100%; 
+    max-width: 800px;
+}
+
+@media(max-width:991px){
+    .movies{
+        padding: 40px;
+    }
+}
+.caracteristicas{
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
 }
