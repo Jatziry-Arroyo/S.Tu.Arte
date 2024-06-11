@@ -297,3 +297,10 @@ button {
     text-align: left;
 }
 
+/* Estilo para campos user-invalid */
+input:user-invalid,
+textarea:user-invalid {
+    outline: 5px #d38f33 solid;
+}
+
+

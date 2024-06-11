@@ -175,9 +175,11 @@ nav {
 }
 
 /*talento mexa*/
+
 .home{
 	margin-right: 8%;
 	margin-left: 8%;
+
 }
 .home .carousel-item{
 	height:85vh;
@@ -205,6 +207,7 @@ nav {
 	transform: translate(-50%,-50%);
 	text-align: center;
 }
+
 
 h1{
 	font-family: 'Poppins', sans-serif;
@@ -429,6 +432,7 @@ img .flecha{
 	}
 
   }
+
 
 
 /*footer*/

@@ -48,7 +48,7 @@ height: 72px;
     opacity: 1;
     color: white;
     font-size: 17px;
-    text-align: center;
+    text-align: left;
 }
 
 #pp {
@@ -77,7 +77,7 @@ a.nav-link:focus {
 }
 
 .img-icon{
-    height: 28px;
+    height: 20px;
     justify-content: left;
 }
 
@@ -93,7 +93,8 @@ a.nav-link:focus {
 
 .nav-item {
     color: white;
-    height: 85px;
+    height: 72px;
+	padding-top: 5px;
 }
 
 nav,a,li,ul {
@@ -116,16 +117,20 @@ nav {
     z-index: 5;
 }
 
+
 .navbar-brand {
     text-align: left;
     justify-content: left;
     position: fixed;
 }
 
-.navbar-toggler{width: auto;}
+.navbar-toggler{
+  width: auto;
+  margin-left: 0px;
+}
 
 @media (max-width:992px) {
-    .nav-item{
+    .nav-item {
         text-align: left;
         justify-content: left;
     }
@@ -141,12 +146,34 @@ nav {
     .nav-link{
         text-align: left;
         justify-content: left;
+		padding-left: 15px;
     }
+	.navbar-collapse{
+		height: 480px;
+		background-color: rgba(0,0,0,0.9);
+	}
+	.navbar {
+		display: block;
+	}
+	.container-fluid {
+		width: 240px;
+	}
+	#div-nav{
+		margin-left: 5%;
+	}
+	.nav-link:hover, 
+    a.nav-link:hover {
+		color: white;
+		cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
+	}
+
 }
+
 
 h1{color:white}
 
-/* inicia codigo cards*/
+
+/* inicia codigo cards */
 :root {
 	--white: #ffffff;
 	--white-25: #e5e5e5;
@@ -163,21 +190,6 @@ h1{color:white}
 	--margin-3: var(--padding-3);
 }
 
-/* esto no se ocupa-en el body fue donde moví para que quedara bien el footer
-.material-symbols-rounded {
-	user-select: none;
-	font-variation-settings: "FILL" 0, "wght" 250, "GRAD" 0, "opsz" 48;
-}
-*/
-
-/*
-body {
-	display: flex;
-	justify-content: center;
-	min-height: 100vh;
-}
-*/
-
 section {
 	display: flex;
 	flex-direction: column;
@@ -193,7 +205,7 @@ section {
 	font-family: "Poppins", sans-serif;
 }
 
-/*TITULOS*/
+/*TITULOS */
 .header__title {
 	margin-bottom: var(--margin-3);
 	font-size: clamp(1rem, 1vw, 5rem);
@@ -218,6 +230,8 @@ section {
 }
 /*TERMINA TITULOS*/
 
+/*card */
+
 .obras-artistas {
 	display: flex;
 	flex-wrap: wrap;
@@ -230,112 +244,108 @@ section {
 
 
 .product-card {
-	display: flex;
-	flex-direction: column;
-	min-width: 250px;
-	width: 100%;
-	max-width: 300px;
-	overflow: hidden;
-	border: 1px solid var(--white-25);
-	border-radius: var(--border-5);
+  padding: 15px 15px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid var(--white-25);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  flex: auto;
+}
+
+.galeria {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: inline-block;
+
+}
+
+.galeria .product-card__img {
+    display: inline-block;
+    width: 90%;
+    margin: 10px 20px;
+    position: relative;
+}
+
+.galeria img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.galeria .product-card__img .overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    transition: 1s all ease;
+    text-align: center;
+    opacity: 0;
+}
+.galeria .product-card__img:hover .overlay {
+    opacity: 1;
+    
+}
+.galeria .product-card__img .overlay p {
+    font-weight: normal;
+    color: #f5f5f5;
+    margin-top: 15%;
+    line-height: 22px;
+}
+
+/*Estilos texto*/
+
+.card-technique {
+    text-align: center;
+    font-size: 12px;
+}
+
+.card-title {
+    text-align: center;
+    color: rgb(255, 237, 237);
+}
+
+.card-artist {
+    text-align: center;
+    text-decoration:underline dotted;
+}
+  
+.card-text {
+    text-align: justify;
+}
+
+/* Termina estilos texto*/
+
+
+/*Boton*/
+
+button {
 	text-align: center;
+	background-color: #B100A8;
+    color: #f5f5f5;
+    border: 2px;
+	border-radius: 4px;
+    padding: .4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
 }
-
-.product-card__container {
-	height: 360px;
-	width: 100%;
-	position: relative;
-	background-color: var(--white-55);
-	overflow: hidden;
-}
-
-.product-card__img {
-	overflow: hidden;
-}
-
-.product-card__img img {
-	position: relative;
-	width: 100%;
-	transition: transform 4s ease;
-}
-
-
-.product-card__container:hover img {
-	transform: scale(1.2);
-}
-
-
-/*Botones en las cards*/
-
-.product-card__btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	top: 1rem;
-	right: -1rem;
-	width: 40px;
-	height: 40px;
-	background-color: var(--white);
-	border-radius: 50%;
-	color: var(--black-25);
-	z-index: 10;
-	cursor: pointer;
-	opacity: 0;
-	transition: all 0.3s ease, top 0.3s ease 0.2s;
-}
-
-.product-card:hover .product-card__btn {
-	right: 1rem;
-	opacity: 1;
-}
-
-.product-card:hover .product-card__btn.cart {
-	top: calc(1rem + 50px);
-}
-
-.product-card__btn:hover {
-	background-color: var(--black);
-	color: var(--white-25);
-}
-
+/* termina boton */
 
 .product-card__color {
 	display: flex;
 	column-gap: 0.5rem;
 	padding: calc(var(--padding-1) / 2) var(--padding-1);
 }
-
-.product-card__btn-radio {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	width: 22px;
-	height: 22px;
-	border-radius: 50%;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	overflow: hidden;
-}
-
-.product-card__btn-radio span {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	flex-shrink: 0;
-	border-radius: 50%;
-	transition: all 0.3s ease;
-}
-
-.product-card__btn-radio.selected {
-	border: 1.5px solid var(--black);
-}
-
-.product-card__btn-radio.selected span {
-	width: 15px;
-	height: 15px;
+.product-card:hover .product-card__btn.cart {
+	top: calc(1rem + 50px);
 }
 
 [data-tooltip]::before {
@@ -352,9 +362,17 @@ section {
 	pointer-events: none;
 	transition: opacity 0.3s ease;
 }
-
+  
 [data-tooltip]:hover::before {
 	opacity: 1;
+}  
+
+
+.numerito {
+    background-color: white;
+    color: #4b33a8;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
 }
 
 /**termina estilo card*/
@@ -399,4 +417,11 @@ footer{
 .boton-carrito.active .numerito {
     background-color: var(--clr-main);
     color: var(--clr-white);
+}
+
+.numerito {
+    background-color: white;
+    color: #4b33a8;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
 }
