@@ -16,31 +16,31 @@ function cargarProductos(productosElegidos) {
         div.classList.add("producto");
 
         div.innerHTML = `
-        <div class="product-card" style="width: 18rem;" data-product-id="${producto.id}">
-        <div class="product-card__container">
-          <div class="product-card__btn cart" data-tooltip="agregar al carrito"><span class="material-symbols-rounded">shopping_bag</span></div>
-          <div class="product-card__img">
-            <img class="card-img-top" src="${producto.images}" alt="${producto.name}" />
+            <div class="product-card h-100" style="width: 18rem;" data-product-id="${producto.id}">
+                <div class="product-card__container">
+                  <div class="galeria">
+                     <div class="product-card__img">
+                         <img src="${producto.images}" alt="${producto.name}"/>
+                         <div class="overlay">
+                             <h5> Ficha Técnica </h5>
+                             <p class="card-technique"> Técnica: ${producto.tecnica}  
+                                 <br> Materiales: ${producto.materiales}
+                                 <br> Dimensiones: ${producto.ancho} x ${producto.altura} x ${producto.profundidad}
+                              </p>  
+                         </div>
+                       </div>
+                  </div>
+                </div>
+                <div class="product-card__description">
+                    <h3 class="card-title">${producto.name}</h3>
+                    <br>
+                    <p class="card-artist">${producto.artist}</p>
+                    <p class="card-text">${producto.description}</p>
+                    <br>
+                    <div class="product-card__price">$${producto.price}</div>
+                    <button class="producto-agregar" id="${producto.id}" type="submit" >Agregar al carrito</button>
+               </div>
           </div>
-        </div>
-        <br>
-        <div class="product-card__description">
-         <h3 class="card-title">${producto.name}</h3>
-         <br>
-         <p class="card-artist">${producto.artist}</p>
-         <p class="card-text">${producto.description}</p>
-         <div class="card">
-           <div class="card-header">Ficha Técnica</div>
-             <ul class="list-group list-group-flush" id="ficha-tecnica">
-               <li class="list-group-item">Técnica: ${producto.tecnica}</li>
-               <li class="list-group-item">Materiales: ${producto.materiales}</li>
-               <li class="list-group-item">Dimensiones: ${producto.ancho} x ${producto.altura} x ${producto.profundidad}</li>
-             </ul>
-         </div>
-         <br>
-         <button id="boton-producto" class="btn btn-light" type="submit">${producto.price}</button>
-        </div>
-     </div>
         `;
         contenedorProductos.append(div);
     });
@@ -48,8 +48,9 @@ function cargarProductos(productosElegidos) {
 }
 
 function actualizarBotonesAgregar() {
-    document.querySelectorAll(".product-card__btn").forEach(boton => {
+    document.querySelectorAll(".producto-agregar").forEach(boton => {
         boton.addEventListener("click", function () {
+
 
 
             if (localStorage.getItem('productosEnCarrito') == null) {
@@ -109,6 +110,7 @@ function actualizarBotonesAgregar() {
     });
 }
 
+
 function actualizarNumeroCarrito() {
     const productosEnCarrito = localStorage.getItem("productosEnCarrito");
     const contenedorNumCarrito = document.querySelector("#numerito");
@@ -118,3 +120,4 @@ function actualizarNumeroCarrito() {
 window.addEventListener('storage', actualizarNumeroCarrito);
 
 actualizarNumeroCarrito();
+
