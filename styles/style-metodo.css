@@ -3,16 +3,25 @@
 body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
 }
-body{
-  font-family: 'Poppins', sans-serif;
-}
 
+/*#body {
+    font-family: 'Poppins', sans-serif;
+}*/
 
 #nav-fixed {
   position: fixed;
   width: 100%;
 }
 
+/*#div-nav {
+margin-left: 1%;
+margin-right: 1%;
+/*width: 100%;
+
+justify-content: left;
+text-align: left;
+height: 72px;
+}*/
 #div-nav {
   top: 50%;
 }
@@ -44,7 +53,7 @@ body{
   opacity: 1;
   color: white;
   font-size: 17px;
-  text-align: center;/*-*/
+  text-align: left;
 }
 
 #pp {
@@ -92,6 +101,7 @@ a.nav-link:focus {
   color: white;
   height: 72px;
   padding-top: 5px;
+  /*background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));*/
 }
 
 nav,
@@ -105,6 +115,7 @@ ul {
   justify-content: space-between;
   width: 100%;
   height: 72px;
+  /*background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));*/
 }
 
 #btn-menu {
@@ -117,6 +128,7 @@ nav {
   z-index: 5;
 }
 
+
 .navbar-brand {
   text-align: left;
   justify-content: left;
@@ -126,6 +138,7 @@ nav {
 .navbar-toggler {
   width: auto;
   margin-left: 0px;
+  margin-top: 10px;
 }
 
 @media (max-width:992px) {
@@ -150,11 +163,7 @@ nav {
     justify-content: left;
     padding-left: 15px;
   }
-  .navbar-collapse {
-    height: 480px;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  
+
   .navbar {
     display: block;
   }
@@ -170,13 +179,18 @@ nav {
   .nav-link:hover,
   a.nav-link:hover {
     color: white;
-    cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
+    cursor: url("../assets/iconamoon--enter-duotone.png"), auto;
   }
 
+  .navbar-collapse {
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 }
 
 h1 {
   color: white;
+  font-style: normal;
   text-align: center;
 }
 
@@ -317,7 +331,10 @@ footer {
   border-bottom: 2px solid white;
   color: white;
 }
-input:user-invalid, textarea:user-invalid, select:user-invalid {
+
+input:user-invalid,
+textarea:user-invalid,
+select:user-invalid {
   outline: 5px #d38f33 solid;
 }
 
