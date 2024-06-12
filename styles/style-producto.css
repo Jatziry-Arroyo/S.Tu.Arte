@@ -159,6 +159,16 @@ nav {
       background-color: rgba(0,0,0,0.9);
       /*background: linear-gradient(to right, rgba(177, 0, 168,1), rgba(211, 143, 51,1), rgba(13, 10, 175,1));*/
     }
+
+    #div-nav{
+      margin-left: 5%;
+  }
+
+  .nav-link:hover,
+  a.nav-link:hover{
+      color: white;
+      cursor: url("../assets/iconamoon--enter-duotone-2.png"), auto;
+  }
 }
 
 h1{color:white; text-align: center;}
