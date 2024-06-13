@@ -122,6 +122,7 @@ nav {
 .navbar-toggler {
   width: auto;
   margin-left: 0px;
+  margin-top: 10px;
 }
 
 @media (max-width:992px) {
@@ -427,9 +428,9 @@ main {
 
 }
 
-.input-error {
+/*.input-error {
   border: 5px solid #d38f33;
-}
+}*/
 
 /* ******************termina carrito******* */
 
@@ -523,6 +524,11 @@ input {
 
 }
 
+input:user-invalid,
+textarea:user-invalid,
+select:user-invalid {
+  outline: 5px #d38f33 solid;
+}
 
 .btn-primary {
   font-family: "Poppins", sans-serif;

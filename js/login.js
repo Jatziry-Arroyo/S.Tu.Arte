@@ -2,10 +2,10 @@ const loginForm = document.getElementById('loginForm');
 const emailInput = document.getElementById('userEmail');
 const passwordInput = document.getElementById('password');
 const alertContainer = document.getElementById('alert-container');
-const btnEnviar =document.getElementById('btn-rosa');
-const btnCerrar =document.getElementById('btn-rosa2');
+const btnEnviar = document.getElementById('btn-rosa');
+const btnCerrar = document.getElementById('btn-rosa2');
 
-btnEnviar.addEventListener('click', function (event) {
+loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -16,24 +16,24 @@ btnEnviar.addEventListener('click', function (event) {
     loginForm.classList.add('was-validated');
 
     // Validación del campo de correo electrónico
-    if (!emailInput.value) {
+    /*if (!emailInput.value) {
         emailInput.setCustomValidity('El campo de correo es obligatorio.');
-        emailInput.classList.add("input-error");
-    } else if (!validateEmail(emailInput.value)) {
+        emailInput.classList.add("invalid");
+    } else*/ if (!validateEmail(emailInput.value)) {
         emailInput.setCustomValidity('El correo no es válido.');
-        emailInput.classList.add("input-error");
+        emailInput.classList.add("invalid");
     } else {
         emailInput.setCustomValidity('');
-        emailInput.classList.remove("input-error");
+        emailInput.classList.remove("invalid");
     }
 
     // Validación del campo de contraseña
     if (!passwordInput.value) {
         passwordInput.setCustomValidity('El campo de contraseña es obligatorio.');
-        passwordInput.classList.add("input-error");
+        passwordInput.classList.add("invalid");
     } else {
         passwordInput.setCustomValidity('');
-        passwordInput.classList.remove("input-error");
+        passwordInput.classList.remove("invalid");
     }
 
     // Mostrar los errores, si los hay
@@ -41,22 +41,22 @@ btnEnviar.addEventListener('click', function (event) {
         loginForm.reportValidity();
     } else {
 
-       /* // Crear objeto usuario
-        let usuario = {
-            'useremail': emailInput.value,
-            'userpassword': passwordInput.value
-        };
-
-        // Guardar objeto usuario en localStorage como JSON
-        localStorage.setItem("Usuario", JSON.stringify(usuario));
-
-        // Aquí se enviaría el formulario para iniciar sesión.
-        console.log('Formulario válido. Se enviaría el formulario.');
-        console.log(usuario);
-
-        // Reinicia el formulario
-        loginForm.reset();
-        loginForm.classList.remove('was-validated');*/
+        /* // Crear objeto usuario
+         let usuario = {
+             'useremail': emailInput.value,
+             'userpassword': passwordInput.value
+         };
+ 
+         // Guardar objeto usuario en localStorage como JSON
+         localStorage.setItem("Usuario", JSON.stringify(usuario));
+ 
+         // Aquí se enviaría el formulario para iniciar sesión.
+         console.log('Formulario válido. Se enviaría el formulario.');
+         console.log(usuario);
+ 
+         // Reinicia el formulario
+         loginForm.reset();
+         loginForm.classList.remove('was-validated');*/
         validateUser();
 
     }
@@ -64,7 +64,7 @@ btnEnviar.addEventListener('click', function (event) {
 
 function validateEmail(email) {
     // Expresión regular para validar correos electrónicos
-    const re = /^(([^<>()\[\]\.,;:\s@"]+(.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // Prueba si el correo cumple con la expresión regular
     return re.test(String(email).toLowerCase());
 }
@@ -134,15 +134,15 @@ function validateUser() {
     }
 }
 
-function enviarCerrar(){
-    
-    if(localStorage.getItem("Usuario")){
+function enviarCerrar() {
+
+    if (localStorage.getItem("Usuario")) {
         btnEnviar.classList.add("disabled");
         btnCerrar.classList.remove("disabled");
     }
     else {
         btnEnviar.classList.remove("disabled");
-            btnCerrar.classList.add("disabled");
+        btnCerrar.classList.add("disabled");
     }
 }
 
@@ -151,7 +151,7 @@ btnCerrar.addEventListener('click', function (event) {
     enviarCerrar();
 });
 
-window.addEventListener("storage",enviarCerrar());
+window.addEventListener("storage", enviarCerrar());
 
 // Actualizar nùmero carrito
 function actualizarNumeroCarrito() {
@@ -164,16 +164,16 @@ actualizarNumeroCarrito();
 
 // Guardando la tècnica para filtrar
 const pageGrabado = document.getElementById('pageGrabado');
-pageGrabado.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Grabado')});
+pageGrabado.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Grabado') });
 const pageEscultura = document.getElementById('pageEscultura');
-pageEscultura.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Escultura')});
+pageEscultura.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Escultura') });
 const pageOleo = document.getElementById('pageOleo');
-pageOleo.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Óleo')});
+pageOleo.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Óleo') });
 const pageCollage = document.getElementById('pageCollage');
-pageCollage.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Collage')});
+pageCollage.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Collage') });
 const pageAcuarela = document.getElementById('pageAcuarela');
-pageAcuarela.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acuarela')});
+pageAcuarela.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Acuarela') });
 const pageFotografia = document.getElementById('pageFotografia');
-pageFotografia.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Fotografía')});
+pageFotografia.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Fotografía') });
 const pageAcrilico = document.getElementById('pageAcrilico');
-pageAcrilico.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acrílico')});
+pageAcrilico.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Acrílico') });

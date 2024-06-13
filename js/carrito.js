@@ -147,109 +147,127 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!correo.checkValidity()) {
             valid = false;
             correoError.textContent = 'Por favor, ingrese un correo electrónico válido.';
-            correo.classList.add('input-error');
+            correo.classList.add('invalid');
         } else {
             correoError.textContent = '';
-            correo.classList.remove('input-error');
+            correo.classList.remove('invalid');
         }
 
         // Validación de nombre
         if (name.value.trim() === '') {
             valid = false;
             nameError.textContent = 'Por favor, ingrese su nombre.';
-            name.classList.add('input-error');
+            name.classList.add('invalid');
         } else {
             nameError.textContent = '';
-            name.classList.remove('input-error');
+            name.classList.remove('invalid');
         }
 
         // Validación de dirección
         if (direccion.value.trim() === '') {
             valid = false;
             direccionError.textContent = 'Por favor, ingrese su dirección.';
-            direccion.classList.add('input-error');
+            direccion.classList.add('invalid');
         } else {
             direccionError.textContent = '';
-            direccion.classList.remove('input-error');
+            direccion.classList.remove('invalid');
         }
 
         // Validación de noExterior
         if (noExterior.value.trim() === '') {
             valid = false;
             noExteriorError.textContent = 'Por favor, ingrese el número exterior.';
-            noExterior.classList.add('input-error');
+            noExterior.classList.add('invalid');
         } else {
             noExteriorError.textContent = '';
-            noExterior.classList.remove('input-error');
+            noExterior.classList.remove('invalid');
         }
 
         // Validación de código postal
         if (codigoPostal.value.length < 5 || codigoPostal.value.length > 7) {
             valid = false;
             codigoPostalError.textContent = 'El código postal debe tener mínimo 5 caracteres.';
-            codigoPostal.classList.add('input-error');
+            codigoPostal.classList.add('invalid');
         } else {
             codigoPostalError.textContent = '';
-            codigoPostal.classList.remove('input-error');
+            codigoPostal.classList.remove('invalid');
         }
 
         // Validación de colonia
         if (colonia.value.trim() === '') {
             valid = false;
             coloniaError.textContent = 'Por favor, ingrese su colonia.';
-            colonia.classList.add('input-error');
+            colonia.classList.add('invalid');
         } else {
             coloniaError.textContent = '';
-            colonia.classList.remove('input-error');
+            colonia.classList.remove('invalid');
         }
 
         // Validación de estado
         if (estado.value === '') {
             valid = false;
             estadoError.textContent = 'Por favor, seleccione un estado.';
-            estado.classList.add('input-error');
+            estado.classList.add('invalid');
         } else {
             estadoError.textContent = '';
-            estado.classList.remove('input-error');
+            estado.classList.remove('invalid');
         }
 
         // Validación de teléfono
         if (telefono.value.length !== 10) {
             valid = false;
             telefonoError.textContent = 'El número de teléfono debe tener exactamente 10 dígitos.';
-            telefono.classList.add('input-error');
+            telefono.classList.add('invalid');
         } else {
             telefonoError.textContent = '';
-            telefono.classList.remove('input-error');
+            telefono.classList.remove('invalid');
         }
 
-        if (!valid) {
+        /*if (!valid) {
             event.preventDefault();
-            // } else {
-            //     window.location= '../pages/metodo.html';
-
-        }
-        //         if (!form.checkValidity()) {
-        //             event.preventDefault();
-        //         } else {
-        //             window.location.href = 'https://www.youtube.com/';
-        //             }
+        }*/
+        /*
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                } else {
+                    window.location.href = 'https://www.youtube.com/';
+                }*/
 
     });
 });
+/*
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    form.classList.add('was-validated');
+
+    if (form.checkValidity()) {
+        window.location.href = "./metodo.html";
+    }
+}, false);*/
+
+function goPay() {
+    if (form.valid) {
+        window.location.href = "metodo.html";
+    }
+
+}
+
+
 
 // Guardando la tècnica para filtrar
 const pageGrabado = document.getElementById('pageGrabado');
-pageGrabado.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Grabado')});
+pageGrabado.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Grabado') });
 const pageEscultura = document.getElementById('pageEscultura');
-pageEscultura.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Escultura')});
+pageEscultura.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Escultura') });
 const pageOleo = document.getElementById('pageOleo');
-pageOleo.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Óleo')});
+pageOleo.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Óleo') });
 const pageCollage = document.getElementById('pageCollage');
-pageCollage.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Collage')});
+pageCollage.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Collage') });
 const pageAcuarela = document.getElementById('pageAcuarela');
-pageAcuarela.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acuarela')});
+pageAcuarela.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Acuarela') });
 const pageFotografia = document.getElementById('pageFotografia');
-pageFotografia.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Fotografía')});
+pageFotografia.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Fotografía') });
 const pageAcrilico = document.getElementById('pageAcrilico');
-pageAcrilico.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acrílico')});
+pageAcrilico.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Acrílico') });
