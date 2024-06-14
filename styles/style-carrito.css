@@ -177,7 +177,7 @@ nav {
 h1 {
   color: white;
   font-family: "Poppins", sans-serif;
-  /* margin: 50px;    */
+  margin: 50px;   
   text-align: center;
   width: 90%;
 
@@ -187,54 +187,30 @@ h3 {
   color: black;
 }
 
-#telefonoError {
-  color: red;
-}
-
-#correoError {
-  color: red;
-
-}
-
-#codigoPostalError {
-  color: red;
-
-}
-
-#estadoError {
-  color: red;
-
-}
-
-#direccionError {
-  color: red;
-}
-
-#noExteriorError {
-  color: red;
-}
 
 .formularioInfo {
+  color: white;
+}
+
+.subtitle-form {
   color: white;
 }
 
 #carrito-vacio {
   color: white;
   font-family: "Poppins", sans-serif;
-  /* display: flex; */
   text-align: center;
 }
 
-#nameError {
+.error {
   color: red;
+  text-align: left;
 }
 
-#coloniaError {
-  color: red;
-}
-
-.subtitle-form {
-  color: white;
+/* Estilo para campos user-invalid */
+input:user-invalid, select:user-invalid,
+textarea:user-invalid {
+  outline: 5px #d38f33 solid;
 }
 
 
@@ -294,20 +270,67 @@ main {
   font-size: .75rem;
 }
 
-/* .carrito-producto-eliminar {
-    border: 0;
-    background-color: transparent;
-    color: var(--clr-red);
-    cursor: pointer;
-} */
-
 .carrito-acciones {
   display: flex;
   justify-content: space-between;
   color: white;
 }
 
-.carrito-acciones-vaciar {
+.carrito-acciones-vaciar{
+  position: relative;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.6s ease;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.carrito-acciones-vaciar{
+  border: 3px solid #3330E4;
+  overflow: hidden;
+}
+
+.carrito-acciones-vaciar::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color:#FF0000;
+  z-index: -2;
+}
+
+.carrito-acciones-vaciar::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  left: 0;
+  bottom: -150%;
+  border-radius: 30%;
+  background-color: #3330E4;
+  z-index: -1;
+}
+
+.carrito-acciones-vaciar:hover::before{
+ animation: btn-6 1.2s linear both;
+}
+
+@keyframes btn-6 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      bottom: 100px;
+      transform: rotate(360deg);
+  }
+}
+
+
+
+/*.carrito-acciones-vaciar {
   font-family: "Poppins", sans-serif;
   ;
   border: 0;
@@ -315,7 +338,6 @@ main {
   padding: 1rem;
   border-radius: 0.5rem;
   color: white;
-  /* text-transform: uppercase; */
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
@@ -323,8 +345,7 @@ main {
 .carrito-acciones-vaciar:hover {
   background-color: #9d45bc;
   border-color: #5a33a7;
-}
-
+}*/
 
 .carrito-acciones-derecha {
   display: flex;
@@ -332,41 +353,15 @@ main {
 
 .carrito-acciones-total {
   display: flex;
-  /* background-color: #9d45bc;
-    padding: 0.5rem; */
   color: white;
-  /* text-transform: uppercase; */
   text-align: center;
-  /* align-items: center;  */
-  /* justify-content: center; */
-  /* border-bottom: 0.1cap solid rgba(211, 143, 51,1); */
   padding: 0.2rem;
   padding-right: 1.5rem;
   border-radius: 1.5rem;
-  /* text-align: bottom; */
-  /* border-radius: 1rem; */
-  /* gap: 1rem; */
 }
 
-/* .carrito-acciones-comprar {
-    border: 0;
-    background-color: #9d45bc;
-    padding: 0.5rem;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius:0.5rem ;
-    margin-left: 70%;
-    font-family: "Poppins", sans-serif;
-}
 
-.carrito-acciones-comprar:hover {
-  background-color: #5a33a7;
-  border-color: #5a33a7;
-
-} */
-
-#btn-continuar {
+/*#btn-continuar {
   border: 0;
   background-color: #B100A8;
   padding: 0.5rem;
@@ -376,8 +371,58 @@ main {
   margin-left: 60%;
   font-family: "Poppins", sans-serif;
   width: 250px;
+}*/
+
+.btn-primary{
+  position: relative;
+  padding: 8px 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.6s ease;
+  z-index: 2;
 }
 
+.btn-primary{
+  border: 3px solid #3330E4;
+  overflow: hidden;
+}
+
+.btn-primary::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color:#F637EC;
+  z-index: -2;
+}
+
+.btn-primary::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  left: 0;
+  bottom: -150%;
+  border-radius: 30%;
+  background-color: #3330E4;
+  z-index: -1;
+}
+
+.btn-primary:hover::before{
+ animation: btn-5 1.2s linear both;
+}
+
+@keyframes btn-5 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      bottom: 100px;
+      transform: rotate(360deg);
+  }
+}
 
 .disabled {
   display: none;
@@ -428,54 +473,14 @@ main {
 
 }
 
-/*.input-error {
+
+/* .input-error {
   border: 5px solid #d38f33;
-}*/
+} */
+
 
 /* ******************termina carrito******* */
 
-/* ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  form li + li {
-    margin-top: 2em;
-  }
-  
-  label {
-    display: inline-block;
-    width: 90px;
-    text-align: left;
-  } */
-
-/* input,
-  textarea {
-    font: 1em sans-serif;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #999; 
-  }
-  
-  input:focus,
-  textarea:focus {
-    border-color: #000;
-  }
-  
-  textarea {
-    vertical-align: top;
-    height: 5em;
-  }
-   */
-/* .button {
-    padding-left: 90px;
-  }
-  
-  button {
-
-    margin-left: 0.5em;
-  } */
 #info-envio {
   display: flex;
   justify-content: center;
@@ -496,18 +501,7 @@ main {
 
 }
 
-/*
-h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: white;
-  float: left;
-  width: 20%;
-  padding: 30px;
-  font-size: 38px;
-}
-*/
+
 #h3-direccion {
   margin-top: 15px;
 }
@@ -535,16 +529,15 @@ select:user-invalid {
   color: white;
   background-color: #B100A8;
   border-radius: 10px;
-  /* margin-top: 10px;
-    margin-left: 410px;
-    padding: 9px 15px; */
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 9px 15px; 
   width: 150px;
 }
 
 .btn-primary:hover {
   background-color: #B100A8;
-  /* border-color: #5a33a7; */
-}
+} 
 
 span {
   color: white;
@@ -554,14 +547,6 @@ span {
 
 }
 
-/*#left h2 {
-  padding-top: 30px;
-
-}
-
-#left {
-  padding-top: 200px;
-}*/
 
 @media (max-width:992px) {
   #info-envio {

@@ -119,121 +119,147 @@ window.addEventListener('storage', cargarProductosCarrito);
 actualizarNumeroCarrito();
 
 // ***********************Formulario********************************
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-compradores');
-    const correo = document.getElementById('correo');
-    const direccion = document.getElementById('direccion');
-    const noExterior = document.getElementById('noExterior');
-    const codigoPostal = document.getElementById('codigoPostal');
-    const telefono = document.getElementById('telefono');
-    const estado = document.getElementById('estado');
-    const name = document.getElementById('user-name');
-    const colonia = document.getElementById('colonia');
-
-    const correoError = document.getElementById('correoError');
-    const direccionError = document.getElementById('direccionError');
-    const noExteriorError = document.getElementById('noExteriorError');
-    const codigoPostalError = document.getElementById('codigoPostalError');
-    const telefonoError = document.getElementById('telefonoError');
-    const estadoError = document.getElementById('estadoError');
-    const nameError = document.getElementById('nameError');
-    const coloniaError = document.getElementById('coloniaError');
-
-    form.addEventListener('submit', function (event) {
-        let valid = true;
 
 
-        // Validación de correo electrónico
-        if (!correo.checkValidity()) {
-            valid = false;
-            correoError.textContent = 'Por favor, ingrese un correo electrónico válido.';
-            correo.classList.add('invalid');
+'use strict';
+
+const form = document.getElementById('form-compradores');
+const nombreInput = document.getElementById('nombre');
+const correoInput = document.getElementById('correo');
+const telefonoInput = document.getElementById('telefono');
+const direccionInput = document.getElementById('direccion');
+const noExteriorInput = document.getElementById('noExterior');
+const noInteriorInput = document.getElementById('noInterior');
+const codigoPostalInput = document.getElementById('codigoPostal');
+const coloniaInput = document.getElementById('colonia');
+const estadoSelect = document.getElementById('estado');
+
+function validateRegex(input, regex, errorMessage) {
+    if (!regex.test(input.value)) {
+        input.setCustomValidity(errorMessage);
+        input.classList.add('is-invalid');
+    } else {
+        input.setCustomValidity('');
+        input.classList.remove('is-invalid');
+    }
+    input.reportValidity();
+}
+
+const regexNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+const regexCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+const regexTelefono = /^\d{10}$/;
+
+nombreInput.addEventListener('input', function () {
+    validateRegex(nombreInput, regexNombre, 'Debes ingresar un nombre válido (letras y acentos).');
+});
+
+correoInput.addEventListener('input', function () {
+    validateRegex(correoInput, regexCorreo, 'Debes ingresar un correo electrónico válido.');
+});
+
+telefonoInput.addEventListener('input', function () {
+    validateRegex(telefonoInput, regexTelefono, 'Debes ingresar un número de teléfono válido (10 dígitos).');
+});
+
+noExteriorInput.addEventListener('input', function () {
+    if (noExteriorInput.value.trim() === '') {
+        noExteriorInput.setCustomValidity('Debes ingresar un número exterior.');
+        noExteriorInput.classList.add('is-invalid');
+    } else {
+        noExteriorInput.setCustomValidity('');
+        noExteriorInput.classList.remove('is-invalid');
+    }
+    noExteriorInput.reportValidity();
+});
+
+noInteriorInput.addEventListener('input', function () {
+    if (noInteriorInput.value.trim() === '') {
+        noInteriorInput.setCustomValidity('Debes ingresar un número interior o poner NA en caso de no aplicar.');
+        noInteriorInput.classList.add('is-invalid');
+    } else {
+        noInteriorInput.setCustomValidity('');
+        noInteriorInput.classList.remove('is-invalid');
+    }
+    noInteriorInput.reportValidity();
+});
+
+codigoPostalInput.addEventListener('input', function () {
+    if (codigoPostalInput.value.trim().length < 5 || codigoPostalInput.value.trim().length > 7) {
+        codigoPostalInput.setCustomValidity('Debes ingresar un código postal válido.');
+        codigoPostalInput.classList.add('is-invalid');
+    } else {
+        codigoPostalInput.setCustomValidity('');
+        codigoPostalInput.classList.remove('is-invalid');
+    }
+    codigoPostalInput.reportValidity();
+});
+
+direccionInput.addEventListener('input', function () {
+    if (direccionInput.value.trim() === '') {
+        direccionInput.setCustomValidity('Debes ingresar una calle.');
+        direccionInput.classList.add('is-invalid');
+    } else {
+        direccionInput.setCustomValidity('');
+        direccionInput.classList.remove('is-invalid');
+    }
+    direccionInput.reportValidity();
+});
+
+coloniaInput.addEventListener('input', function () {
+    if (coloniaInput.value.trim() === '') {
+        coloniaInput.setCustomValidity('Debes ingresar una colonia.');
+        coloniaInput.classList.add('is-invalid');
+    } else {
+        coloniaInput.setCustomValidity('');
+        coloniaInput.classList.remove('is-invalid');
+    }
+    coloniaInput.reportValidity();
+});
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    form.classList.add('was-validated');
+
+    const inputs = form.querySelectorAll('input, select');
+    inputs.forEach(input => {
+        if (!input.checkValidity()) {
+            input.classList.add('is-invalid');
         } else {
-            correoError.textContent = '';
-            correo.classList.remove('invalid');
+            input.classList.remove('is-invalid');
         }
-
-        // Validación de nombre
-        if (name.value.trim() === '') {
-            valid = false;
-            nameError.textContent = 'Por favor, ingrese su nombre.';
-            name.classList.add('invalid');
-        } else {
-            nameError.textContent = '';
-            name.classList.remove('invalid');
-        }
-
-        // Validación de dirección
-        if (direccion.value.trim() === '') {
-            valid = false;
-            direccionError.textContent = 'Por favor, ingrese su dirección.';
-            direccion.classList.add('invalid');
-        } else {
-            direccionError.textContent = '';
-            direccion.classList.remove('invalid');
-        }
-
-        // Validación de noExterior
-        if (noExterior.value.trim() === '') {
-            valid = false;
-            noExteriorError.textContent = 'Por favor, ingrese el número exterior.';
-            noExterior.classList.add('invalid');
-        } else {
-            noExteriorError.textContent = '';
-            noExterior.classList.remove('invalid');
-        }
-
-        // Validación de código postal
-        if (codigoPostal.value.length < 5 || codigoPostal.value.length > 7) {
-            valid = false;
-            codigoPostalError.textContent = 'El código postal debe tener mínimo 5 caracteres.';
-            codigoPostal.classList.add('invalid');
-        } else {
-            codigoPostalError.textContent = '';
-            codigoPostal.classList.remove('invalid');
-        }
-
-        // Validación de colonia
-        if (colonia.value.trim() === '') {
-            valid = false;
-            coloniaError.textContent = 'Por favor, ingrese su colonia.';
-            colonia.classList.add('invalid');
-        } else {
-            coloniaError.textContent = '';
-            colonia.classList.remove('invalid');
-        }
-
-        // Validación de estado
-        if (estado.value === '') {
-            valid = false;
-            estadoError.textContent = 'Por favor, seleccione un estado.';
-            estado.classList.add('invalid');
-        } else {
-            estadoError.textContent = '';
-            estado.classList.remove('invalid');
-        }
-
-        // Validación de teléfono
-        if (telefono.value.length !== 10) {
-            valid = false;
-            telefonoError.textContent = 'El número de teléfono debe tener exactamente 10 dígitos.';
-            telefono.classList.add('invalid');
-        } else {
-            telefonoError.textContent = '';
-            telefono.classList.remove('invalid');
-        }
-
-        /*if (!valid) {
-            event.preventDefault();
-        }*/
-        /*
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                } else {
-                    window.location.href = 'https://www.youtube.com/';
-                }*/
-
     });
+
+    if (form.checkValidity()) {
+        let registro = {
+            nombre: nombreInput.value,
+            correo: correoInput.value,
+            telefono: telefonoInput.value,
+            direccion: direccionInput.value,
+            noExterior: noExteriorInput.value,
+            noInterior: noInteriorInput.value,
+            codigoPostal: codigoPostalInput.value,
+            colonia: coloniaInput.value,
+            estado: estadoSelect.value,
+        };
+
+        localStorage.setItem('registro', JSON.stringify(registro));
+        console.log(registro);
+        alert("Datos guardados correctamente.");
+
+        form.classList.remove('was-validated');
+        form.reset();
+
+        window.location.href = "metodo.html";
+    }
+}, false);
+
+document.addEventListener('DOMContentLoaded', function () {
+    let registro = JSON.parse(localStorage.getItem('registro'));
+    if (registro) {
+        console.log(registro);
+    }
 });
 /*
 form.addEventListener('submit', function (event) {
