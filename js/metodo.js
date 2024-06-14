@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const paymentForm = document.getElementById('paymentForm');
 
+
     function validateInput(input, pattern, message) {
         if (!pattern.test(input.value)) {
             input.setCustomValidity(message);
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             input.setCustomValidity('');
             input.classList.remove('is-invalid');
+
         }
         input.reportValidity();
     }
@@ -99,6 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false);
 });
 
+
+
+
+
+
 // Actualizar nùmero carrito
 function actualizarNumeroCarrito() {
     const productosEnCarrito = localStorage.getItem("productosEnCarrito");
@@ -110,16 +117,16 @@ actualizarNumeroCarrito();
 
 // Guardando la tècnica para filtrar
 const pageGrabado = document.getElementById('pageGrabado');
-pageGrabado.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Grabado')});
+pageGrabado.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Grabado') });
 const pageEscultura = document.getElementById('pageEscultura');
-pageEscultura.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Escultura')});
+pageEscultura.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Escultura') });
 const pageOleo = document.getElementById('pageOleo');
-pageOleo.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Óleo')});
+pageOleo.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Óleo') });
 const pageCollage = document.getElementById('pageCollage');
-pageCollage.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Collage')});
+pageCollage.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Collage') });
 const pageAcuarela = document.getElementById('pageAcuarela');
-pageAcuarela.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acuarela')});
+pageAcuarela.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Acuarela') });
 const pageFotografia = document.getElementById('pageFotografia');
-pageFotografia.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Fotografía')});
+pageFotografia.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Fotografía') });
 const pageAcrilico = document.getElementById('pageAcrilico');
-pageAcrilico.addEventListener('click', function(){localStorage.setItem('Tecnica', 'Acrílico')});
+pageAcrilico.addEventListener('click', function () { localStorage.setItem('Tecnica', 'Acrílico') });

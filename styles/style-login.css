@@ -91,7 +91,10 @@ a.nav-link:focus {
     padding-top: 5px;
 }
 
-nav,a, li, ul {
+nav,
+a,
+li,
+ul {
     color: white;
 }
 
@@ -144,8 +147,8 @@ nav {
         justify-content: left;
         padding-left: 15px;
     }
-    
-   /* .navbar {
+
+    /* .navbar {
         display: block;
     } */
 
@@ -184,7 +187,7 @@ h1 {
     border-radius: 15px;
     padding: 20px;
     margin-top: 100px;
-    
+
 }
 
 
@@ -308,14 +311,16 @@ h1 {
 .disabled {
     display: none;
 }
-/*input:user-invalid {
+
+input:user-invalid {
     outline: 5px #d38f33 solid;
-  }
- */
+}
+
+/*
  .input-error {
     border: 5px solid #d38f33;
     border-color: #d38f33 !important;
-  } 
+  } */
 
 
 /*.rounded-border input[type="text"],
@@ -338,4 +343,4 @@ h1 {
     color: #4b33a8;
     padding: .15rem .25rem;
     border-radius: .25rem;
-  }
+}
