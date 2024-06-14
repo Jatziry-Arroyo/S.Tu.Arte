@@ -124,34 +124,44 @@
                     <h3 class="formularioInfo">Información</h3>
 
                     <label for="correo" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico"
+                    <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo Electrónico"
                         pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
-                    <div class="error" id="correoError"></div>
+                        <div class="invalid-feedback">
+                            Debes ingresar un correo electrónico valida (Puedes usar letras, números, puntos, comas y guiones).
+                        </div>
                     <br>
 
                     <li>
-                        <label for="user-name">Nombre: </label>
-                        <input class="form-control" type="name" id="user-name" name="user_name"
-                            placeholder="Escribe tu nombre aquí" />
-                        <div id="nameError" class="error"></div>
+                        <label for="nombre" class="form-label">Nombre/s</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre"
+                        pattern="^[a-zA-ZÀ-ÿ\s]{1,40}$" required>
+                        <div class="invalid-feedback">
+                            Debes ingresar un Nombre/s (letras y acentos).
+                        </div>
                     </li>
 
                     <h3 class="formularioInfo" id="h3-direccion">Dirección</h3>
                     <div class="row">
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="direccion" placeholder="Calle" required>
-                            <div class="error" id="direccionError"></div>
+                            <div class="invalid-feedback" >
+                                Debes ingresar una calle.
+                            </div>
                             <br>
                         </div>
                         <div class="col-sm-2">
                             <input type="text" class="form-control" id="noExterior" placeholder="No. exterior" required
                                 minlength="1" maxlength="7" required>
-                            <div class="error" id="noExteriorError"></div>
+                            <div class="invalid-feedback">
+                                Debes ingresar un número exterior.
+                            </div>
                             <br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" id="noInterior" placeholder="No. interior"
-                                minlength="1" maxlength="5" required>
+                            <input type="text" class="form-control" id="noInterior" placeholder="No. interior" required>
+                            <div class="invalid-feedback">
+                                Debes ingresar un número interior o poner NA en caso de no aplicar.
+                            </div>
                             <br>
                         </div>
                     </div>
@@ -159,19 +169,22 @@
                         <div class="col-sm-6">
                             <input type="text" class="form-control" id="codigoPostal" placeholder="Código postal"
                                 minlength="5" maxlength="7" required>
-                            <div class="error" id="codigoPostalError"></div>
+                            <div class="invalid-feedback">
+                                Debes ingresar un código postal valido.
+                            </div>
                             <br>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="colonia" placeholder="Colonia">
-                            <div class="error" id="coloniaError"></div>
+                            <input type="text" class="form-control" id="colonia" placeholder="Colonia" required>
+                            <div class="invalid-feedback">
+                                Debes ingresar una colonia.
+                            </div>
                             <br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <!--<label for="estado" class="form-label">Estado</label>-->
-                            <select class="form-control" id="estado" required>
+                            <select class="form-control" id="estado" for="estado" required>
                                 <option value="">Seleccione su estado</option>
                                 <option value="Aguascalientes">Aguascalientes</option>
                                 <option value="Baja California">Baja California</option>
@@ -205,21 +218,24 @@
                                 <option value="Veracruz">Veracruz</option>
                                 <option value="Yucatán">Yucatán</option>
                                 <option value="Zacatecas">Zacatecas</option>
-                            </select>
-                            <div class="error" id="estadoError"></div>
+                            </select> 
+                            <div class="invalid-feedback">
+                                <!-- Selecciona tu Estado. -->
+                            </div>
                             <br>
                         </div>
                         <div class="col-sm-6">
-                            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" minlength="10"
-                                maxlength="10" required>
-                            <div class="error" id="telefonoError"></div>
+                            <!-- <label for="telefono" class="form-label"></label> -->
+                         <input type="tel" class="form-control" id="telefono" for="telefono" placeholder="Ingrese su Número Telefónico"
+                        minlength="10" maxlength="10" required>
+                        <div class="invalid-feedback">
+                            Debes ingresar un telefóno válido (10 dígitos).
+                        </div>
                             <br>
                         </div>
                     </div>
                     <div class="row" id="btn-row">
-                        <a href="./metodo.html">
-                            <button type="submit" class="btn btn-primary">Comprar</button>
-                        </a>
+                        <button id="btn-guardar" class="btn btn-primary" type="submit" onclick="">Comprar</button>
                     </div>
                 </div>
             </form>
