@@ -19,8 +19,11 @@ fileInput.addEventListener('change', e => {
         const reader = new FileReader();
         reader.onload = function (e) {
             img.src = e.target.result;
+            console.log(e.target);
         }
-        reader.readAsDataURL(e.target.files[0])
+        reader.readAsDataURL(e.target.files[0]);
+        let fileName = e.target.files[0].name;
+        console.log('Nombre original de la imagen:',fileName);
     } else {
         img.src = defaultImagen;
     }
@@ -37,18 +40,34 @@ form.addEventListener('submit', function (event) {
 
     if (form.checkValidity()) {
         let producto = {
-            'name': tituloObraInput.value,
-            'artist': artistaInput.value,
-            'tecnica': tecnicaInput.value,
-            'materiales': materialesInput.value,
-            'ancho': anchoInput.value,
-            'altura': alturaInput.value,
-            'profundidad': profundidadInput.value,
-            'description': descripcionInput.value,
-            'price': precioInput.value,
-            'images': img.src,
-            'termsConditions': termsConditions.checked,
+            title: tituloObraInput.value,
+            technique: tecnicaInput.value,
+            materials: materialesInput.value,
+            width: parseInt(anchoInput.value),
+            height: parseInt(alturaInput.value),
+            depth: parseInt(profundidadInput.value),
+            description_product: descripcionInput.value,
+            price: parseFloat(precioInput.value),
+            terms_conditions: termsConditions.checked,
+            url: fileInput.files[0].name,
+            //artist:{idartist: parseInt(artistaInput.value)}
+            artist_idartist: parseInt(artistaInput.value)
         };
+        fetch('https://miprimerstuart-1.onrender.com/api/product/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(producto)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(JSON.stringify(data, null, 2));
+        })
+        .catch(error => {
+            console.error('Error posting product:', error);
+            //postProductResult.textContent = 'Error posting product';
+        });
         console.log(producto);
         //localStorage.setItem("Producto", JSON.stringify(producto));
 
@@ -72,7 +91,7 @@ tituloObraInput.addEventListener('input', function () {
 });
 
 artistaInput.addEventListener('input', function () {
-    validateRegex(artistaInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ]{3,50}$/, 'Mínimo 3 caracteres (letras y números)');
+    validateRegex(artistaInput, /^[a-zA-Z0-9,.\sáéíóúÁÉÍÓÚñÑüÜ]{1,50}$/, 'Mínimo 1 caracteres (letras y números)');
 });
 
 materialesInput.addEventListener('input', function () {
