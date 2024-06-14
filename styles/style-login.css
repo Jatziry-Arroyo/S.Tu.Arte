@@ -122,7 +122,7 @@ nav {
 
 .navbar-toggler {
     width: auto;
-    margin-left: 0px;
+    margin-left: 17px;
 }
 
 @media (max-width:992px) {
@@ -191,41 +191,13 @@ h1 {
 }
 
 
-
-
-/*.text-white {
-    color: white !important;
-}*/
-
-/*#btn-rosa {
-    background-color: #B100A8;
-    border-color: #B100A8;
-    color: white;
+@media (max-width:992px) {
+    #formulario {
+        width: 90%;
+    }
 }
 
-#btn-rosa:hover {
-    background-color: #B100A8;
-    border-color: #B100A8;
-}
-
-#btn-rosa2 {
-    background-color: #B100A8;
-    border-color: #B100A8;
-    color: white;
-}
-
-#btn-rosa2:hover {
-    background-color: #B100A8;
-    border-color: #B100A8;
-}
-
-.text-light:hover {
-    color: #B100A8;
-}*/
-
-
-
-.btn{
+.btn {
     position: relative;
     padding: 8px 8px;
     text-decoration: none;
@@ -234,23 +206,23 @@ h1 {
     z-index: 2;
 }
 
-#btn-rosa{
+#btn-rosa {
     border: 3px solid #3330E4;
     overflow: hidden;
 }
 
-#btn-rosa::after{
+#btn-rosa::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    background-color:#F637EC;
+    background-color: #F637EC;
     z-index: -2;
 }
 
-#btn-rosa::before{
+#btn-rosa::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -262,15 +234,16 @@ h1 {
     z-index: -1;
 }
 
-#btn-rosa:hover::before{
-   animation: btn-5 1.2s linear both;
+#btn-rosa:hover::before {
+    animation: btn-5 1.2s linear both;
 }
 
 @keyframes btn-5 {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         bottom: 100px;
         transform: rotate(360deg);
     }

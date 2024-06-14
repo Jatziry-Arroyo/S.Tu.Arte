@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body, html {
-background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
-font-family: 'Poppins', sans-serif;
-margin: 0;
-padding: 0;
-width: auto;
-height: auto;
-overflow-x: hidden;
+body,
+html {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    overflow-x: hidden;
 }
 
 #nav-fixed {
@@ -56,7 +57,7 @@ height: 72px;
     opacity: 1;
     color: white;
     font-size: 17px;
-    text-align: center;
+    text-align: left;
 }
 
 #pp {
@@ -138,6 +139,7 @@ nav {
 .navbar-toggler {
     width: auto;
     margin-left: 0px;
+    margin-top: 10px;
 }
 
 @media (max-width:992px) {
@@ -254,7 +256,7 @@ body {
 
     overflow-x: hidden;
     overflow-y: hidden;
-    
+
     /*ocultan el exceso de pantalla pq sin ellos había que hacer scroll a lo ancho*/
 
     display: flex;
@@ -262,11 +264,12 @@ body {
     justify-content: center;
     position: initial;
 }
+
 .masthead h1 {
-        font-size: 4rem;
-        font-family: stuarte-font;
-        color: aliceblue;
- }
+    font-size: 4rem;
+    font-family: stuarte-font;
+    color: aliceblue;
+}
 
 
 .color-overlay {
@@ -293,7 +296,7 @@ body {
     transform: translate(-50%, -50%) rotate(-35deg);
     width: 50%;
     z-index: 5;
-    /* Centra el texto horizontalmente y verticalmente dentro de masthead y aplica la rotación */ 
+    /* Centra el texto horizontalmente y verticalmente dentro de masthead y aplica la rotación */
 }
 
 .square-bg {
@@ -342,9 +345,10 @@ body {
 .modal-content {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
 }
+
 /*Aqui empiezan los atributos del fondo interactivo*/
 
-.container1{
+.container1 {
     position: absolute;
     display: flex;
     align-items: center;
@@ -361,45 +365,47 @@ body {
     justify-content: space-between;
 }
 
-.container1 span{
+.container1 span {
     position: absolute;
     border-radius: 5px;
-    transition:top 3s, left 3s;
+    transition: top 3s, left 3s;
     z-index: 1;
-    
+
 }
-.container1 .square{
+
+.container1 .square {
     border-radius: 5px;
     z-index: 1;
     width: 45px;
     height: 45px;
 }
-.container1 .circle{
+
+.container1 .circle {
     border-radius: 50%;
     height: 45px;
     width: 45px;
     z-index: 1;
 }
 
-.content-container{
+.content-container {
     display: flex;
-    flex-direction: row;  
-    align-items: center;  
-    justify-content: center;  
-    flex-wrap: wrap;  
-    gap: 20px; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 /*Letras de Stuart*/
-.stuart{
+.stuart {
     padding-right: 800px;
     padding-top: 100px;
     z-index: 10;
     position: absolute;
-    top:0;
+    top: 0;
 }
 
-.stuart h1{
+.stuart h1 {
     margin: 20px;
     padding: 0px;
     color: aliceblue;
@@ -407,22 +413,26 @@ body {
     font-family: stuarte-font;
     src: url("../assets/porter_sans_block/porter-sans-inline-block.ttf");
 }
+
 @media (max-width: 1024px) and (min-width: 768px) {
     .stuart {
-        padding-right: 200px;  
+        padding-right: 200px;
         padding-top: 100px;
     }
+
     .stuart h1 {
-        font-size: 6rem;  
+        font-size: 6rem;
     }
 }
+
 @media (max-width: 768px) {
     .stuart {
-        padding-right: 150px;  
+        padding-right: 150px;
         padding-top: 50px;
     }
+
     .stuart h1 {
-        font-size: 5rem;  
+        font-size: 5rem;
     }
 }
 
@@ -436,11 +446,13 @@ body {
     justify-content: center;
     place-items: center;
 }
-.swiper{
+
+.swiper {
     width: 50%;
     margin: 0 auto;
 }
-.swiper-slide{
+
+.swiper-slide {
     background-position: center;
     background-size: contain;
     width: 250px;
@@ -448,8 +460,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .swiper-slide img {
-    display:block;
+    display: block;
     width: 85%;
     margin: 0 auto;
 }
@@ -465,25 +478,27 @@ h2 {
     text-align: center;
 }
 
-.carousel-container{
+.carousel-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 0 10%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
+
 .mySwiper {
-    width: 100%; 
+    width: 100%;
     max-width: 800px;
 }
 
-@media(max-width:991px){
-    .movies{
+@media(max-width:991px) {
+    .movies {
         padding: 40px;
     }
 }
-.caracteristicas{
+
+.caracteristicas {
     height: 500px;
     width: 500px;
     object-fit: contain;
@@ -494,4 +509,4 @@ h2 {
     color: #4b33a8;
     padding: .15rem .25rem;
     border-radius: .25rem;
-  }
+}
