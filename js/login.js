@@ -115,6 +115,7 @@ function validateUser() {
             console.log('Formulario válido. Se enviaría el formulario.');
             //console.log(usuario);
 
+            window.location.href = "./catalogo.html";
             // Reinicia el formulario
             loginForm.reset();
             loginForm.classList.remove('was-validated');
