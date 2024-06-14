@@ -248,7 +248,7 @@ select {
     margin-top: 5%;
 }
 
-button {
+/*button {
     font-family: "Poppins", sans-serif;
     color: white;
     background-color: #B100A8;
@@ -256,7 +256,115 @@ button {
     margin-top: 10px;
     padding: 6px 12px;
     width: 150px;
+}*/
+
+/*guardar*/
+#btn-guardar{
+    position: relative;
+    padding: 10px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.6s ease;
+    text-align: center;
+    z-index: 2;
 }
+
+#btn-guardar{
+    border: 3px solid #3330E4;
+    overflow: hidden;
+}
+
+#btn-guardar::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color:#F637EC;
+    z-index: -2;
+}
+
+#btn-guardar::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    left: 0;
+    bottom: -150%;
+    border-radius: 30%;
+    background-color: #3330E4;
+    z-index: -1;
+}
+
+#btn-guardar:hover::before{
+   animation: btn-5 1.2s linear both;
+}
+
+@keyframes btn-5 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        bottom: 100px;
+        transform: rotate(360deg);
+    }
+}
+
+/*regresar*/
+#btn-return{
+    position: relative;
+    padding: 10px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.6s ease;
+    text-align: center;
+    z-index: 2;
+}
+
+#btn-return{
+    border: 3px solid #3330E4;
+    overflow: hidden;
+}
+
+#btn-return::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color:#9E3DFF;
+    z-index: -2;
+}
+
+#btn-return::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    left: 0;
+    bottom: -150%;
+    border-radius: 30%;
+    background-color: #3330E4;
+    z-index: -1;
+}
+
+#btn-return:hover::before{
+   animation: btn-return 1.2s linear both;
+}
+
+@keyframes btn-return {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        bottom: 100px;
+        transform: rotate(360deg);
+    }
+}          
 
 #botones {
     text-align: center;
@@ -290,6 +398,7 @@ button {
     }
 
 }
+
 
 /*Formato errores validación*/
 .error {

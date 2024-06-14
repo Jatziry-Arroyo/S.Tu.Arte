@@ -275,7 +275,61 @@ main {
   color: white;
 }
 
-.carrito-acciones-vaciar {
+.carrito-acciones-vaciar{
+  position: relative;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.6s ease;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.carrito-acciones-vaciar{
+  border: 3px solid #3330E4;
+  overflow: hidden;
+}
+
+.carrito-acciones-vaciar::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color:#FF0000;
+  z-index: -2;
+}
+
+.carrito-acciones-vaciar::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  left: 0;
+  bottom: -150%;
+  border-radius: 30%;
+  background-color: #3330E4;
+  z-index: -1;
+}
+
+.carrito-acciones-vaciar:hover::before{
+ animation: btn-6 1.2s linear both;
+}
+
+@keyframes btn-6 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      bottom: 100px;
+      transform: rotate(360deg);
+  }
+}
+
+
+
+/*.carrito-acciones-vaciar {
   font-family: "Poppins", sans-serif;
   ;
   border: 0;
@@ -290,8 +344,7 @@ main {
 .carrito-acciones-vaciar:hover {
   background-color: #9d45bc;
   border-color: #5a33a7;
-}
-
+}*/
 
 .carrito-acciones-derecha {
   display: flex;
@@ -307,7 +360,7 @@ main {
 }
 
 
-#btn-continuar {
+/*#btn-continuar {
   border: 0;
   background-color: #B100A8;
   padding: 0.5rem;
@@ -317,8 +370,58 @@ main {
   margin-left: 60%;
   font-family: "Poppins", sans-serif;
   width: 250px;
+}*/
+
+.btn-primary{
+  position: relative;
+  padding: 8px 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.6s ease;
+  z-index: 2;
 }
 
+.btn-primary{
+  border: 3px solid #3330E4;
+  overflow: hidden;
+}
+
+.btn-primary::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color:#F637EC;
+  z-index: -2;
+}
+
+.btn-primary::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  left: 0;
+  bottom: -150%;
+  border-radius: 30%;
+  background-color: #3330E4;
+  z-index: -1;
+}
+
+.btn-primary:hover::before{
+ animation: btn-5 1.2s linear both;
+}
+
+@keyframes btn-5 {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      bottom: 100px;
+      transform: rotate(360deg);
+  }
+}
 
 .disabled {
   display: none;
